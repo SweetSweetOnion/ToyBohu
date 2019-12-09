@@ -4,22 +4,22 @@ using UnityEngine;
 using FMODUnity;
 public class PlayerAudioManager : MonoBehaviour
 {
-    [FMODUnity.EventRef]
-    public string dashEvent;
-    [FMODUnity.EventRef]
-    public string attaque1_etape1_wooshEvent;
-    [FMODUnity.EventRef]
-    public string attaque2_etape1_wooshEvent;
-    [FMODUnity.EventRef]
-    public string block_armesEvent;
-    [FMODUnity.EventRef]
-    public string Hit_bodyEvent;
-    [FMODUnity.EventRef]
-    public string Epee_out_fourreauEvent;
-      [FMODUnity.EventRef]
-    public string Epee_in_fourreauEvent;
-     [FMODUnity.EventRef]
-    public string FootstepsEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string dashEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string attaque1_etape1_wooshEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string attaque2_etape1_wooshEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string block_armesEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string Hit_bodyEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string Epee_out_fourreauEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string Epee_in_fourreauEvent;
+    [FMODUnity.EventRef, SerializeField]
+    private string FootstepsEvent;
     
 
     public void AudioDash()
@@ -57,4 +57,4 @@ public class PlayerAudioManager : MonoBehaviour
     }
 
 }
-}
+

@@ -12,21 +12,30 @@ public class AudioManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string Ambiance_Round3Event;
     [FMODUnity.EventRef]
-    public string Télé_allumée_backgroundEvent;
+    public string Ambiance_ExterieurEvent;
     [FMODUnity.EventRef]
-    public string Télé_glitchEvent;
-    [FMODUnity.EventRef]
-    public string Télé_switchOFFEvent;
-    [FMODUnity.EventRef]
-    public string TonerreEvent;
-    [FMODUnity.EventRef]
-    public string Voiture_LtoREvent;
-    [FMODUnity.EventRef]
-    public string Voiture_Police_LtoREvent;
-    [FMODUnity.EventRef]
-    public string Voiture_RtoLEvent;
-    [FMODUnity.EventRef]
-    public string Voiture_Police_RtoLEvent;
+    public string RonflementsEvent;
 
-    
+    private void Start()
+    {
+        RuntimeManager.PlayOneShot(Ambiance_ExterieurEvent);
+        RuntimeManager.PlayOneShot(RonflementsEvent);
+    }
+
+
+    public void Round1Audio()
+    {
+        RuntimeManager.PlayOneShot(Ambiance_BaseEvent);
+    }
+
+    public void Round2Audio()
+    {
+        RuntimeManager.PlayOneShot(Ambiance_Round2Event);
+
+    }
+
+    public void Round3Audio()
+    {
+        RuntimeManager.PlayOneShot(Ambiance_Round3Event);
+    }
 }

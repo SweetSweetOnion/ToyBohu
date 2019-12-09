@@ -25,6 +25,7 @@ public class Fighter : MonoBehaviour
     private Animator animator;
 	private FXManager fxManager;
 	private Dash dash;
+    private PlayerAudioManager playerAudioManager;
     private bool attackBuffer;
 
 	//Counters
@@ -70,6 +71,7 @@ public class Fighter : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 		fxManager = GetComponent<FXManager>();
 		dash = GetComponent<Dash>();
+        playerAudioManager = GetComponentInChildren<PlayerAudioManager>();
     }
 
 	void Start()
@@ -144,12 +146,15 @@ public class Fighter : MonoBehaviour
 					dash.InitDash();
                     TensionManager.Instance.AddTension(10f);
 					fxManager.DashFx();
+                    playerAudioManager.AudioDash();
                     break;
                 }
             case FighterState.SetUpAttack:
                 {
                     animator.SetTrigger("Attack");
                     TensionManager.Instance.AddTension(15f);
+                    playerAudioManager.AudioEpee_Out();
+                    playerAudioManager.AudioAttaque1_Woosh();
                     break;
                 }
             case FighterState.Attack:
@@ -159,7 +164,8 @@ public class Fighter : MonoBehaviour
                 }
             case FighterState.AttackLag:
                 {
-					currentHitbox.SetAttacking(false);
+                    //playerAudioManager.AudioEpee_in();
+                    currentHitbox.SetAttacking(false);
 					break;
                 }
             case FighterState.Death:
@@ -352,6 +358,7 @@ public class Fighter : MonoBehaviour
     {
         ImpulseOppositToOpponent(7f);
         fxManager.ParryFX();
+        playerAudioManager.AudioBlockArmes();
         Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
     }
 
@@ -373,6 +380,7 @@ public class Fighter : MonoBehaviour
 			currentHitbox.SetAttacking(false);
             ImpulseOppositToOpponent(4f);
             TensionManager.Instance.AddTension(50f);
+            playerAudioManager.AudioHitBody();
         }
     }
 
