@@ -126,6 +126,7 @@ public class Fighter : MonoBehaviour
         {
             animator.SetFloat("Speed", 0f);
         }
+		animator.SetFloat("SpeedScale", physics.orientationVelocity * physics.velocity);
     }
 
     /**
