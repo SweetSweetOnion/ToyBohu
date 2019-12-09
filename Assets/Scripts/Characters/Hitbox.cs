@@ -26,6 +26,11 @@ public class Hitbox : MonoBehaviour
         {
 			opponent.Damage(1);
             GetComponentInParent<Fighter>().SucceedAttack();
+            return;
+        }
+        if(collider.gameObject != null && collider.gameObject.GetComponent<Hitbox>() != null)
+        {
+            GetComponentInParent<Fighter>().HitboxCollide();
         }
     }
 }
