@@ -99,4 +99,10 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public int GetVictory(int index)
+    {
+        return victory[index];
+    }
+
 }

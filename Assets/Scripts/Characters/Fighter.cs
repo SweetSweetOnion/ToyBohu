@@ -370,4 +370,11 @@ public class Fighter : MonoBehaviour
 			ChangeState(FighterState.Idle);
 		}
 	}
+
+
+    public int getHp()
+    {
+        return hp;
+    }
+
 }
