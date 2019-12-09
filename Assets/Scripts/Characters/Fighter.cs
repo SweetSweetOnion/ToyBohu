@@ -19,23 +19,24 @@ public class Fighter : MonoBehaviour
 	private Physics physics;
     private bool moved = false;
 
-    private Hitbox currentHitbox;
+    public Hitbox currentHitbox;
 	private float lastDash;
     private Impact impact;
     private Animator animator;
 	private FXManager fxManager;
 	private Dash dash;
+    private bool attackBuffer;
 
 	//Counters
 	private float counterInState;
 
     //Serialized fields
     [SerializeField]private Fighter opponent;
-	[SerializeField]private float dashCooldown = 0.5f;
-	[SerializeField]private float setUpAttackDuration = 0.2f;
-	[SerializeField]private float blockDuration = 0.5f;
+	[SerializeField]private float dashCooldown = 0.2f;
+	[SerializeField]private float setUpAttackDuration = 0.1f;
+	[SerializeField]private float blockDuration = 0.2f;
 	[SerializeField]private float attackDuration = 0.2f;
-	[SerializeField]private float attackLagDuration = 0.05f;
+	[SerializeField]private float attackLagDuration = 0.2f;
 	//accessors
 	public FighterState currentState => state;
 	public Vector2 direction => currentDirection;
@@ -43,6 +44,7 @@ public class Fighter : MonoBehaviour
 
     public void Initialize()
     {
+        attackBuffer = false;
         hp = maxHP;
         state = FighterState.Idle;
         impact.ResetImpact();
@@ -169,9 +171,8 @@ public class Fighter : MonoBehaviour
 		if(nextState != state)
 		{
 			state = nextState;
-            //GetComponent<Dash>().OnStateChange(nextState);
-		}
-       
+        }
+        attackBuffer = false;
     }
     
 
@@ -288,6 +289,10 @@ public class Fighter : MonoBehaviour
             ChangeState(FighterState.SetUpAttack);
             return true;
         }
+        if(state == FighterState.Dash)
+        {
+            attackBuffer = true;
+        }
         return false;
     }
 
@@ -306,12 +311,10 @@ public class Fighter : MonoBehaviour
         }
         if (state == FighterState.Block)
         {
-            Debug.Log("Parade !");
             TensionManager.Instance.AddTension(35f);
             ChangeState(FighterState.Idle);
-            ImpulseOppositToOpponent(7f);
+            ParryFeedback();
             opponent.ImpulseOppositToOpponent(7f);
-			fxManager.ParryFX();
             return;
         }
 
@@ -321,13 +324,16 @@ public class Fighter : MonoBehaviour
         {
             ChangeState(FighterState.Death);
             animator.SetTrigger("Death");
+            ImpulseOppositToOpponent(20f);
+            Gamefeel.Instance.InitScreenshake(0.3f, 0.8f);
+            return;
         }
         else
         {
             animator.SetTrigger("Hit");
         }
         ImpulseOppositToOpponent(15f);
-        Gamefeel.Instance.InitScreenshake(0.2f, 0.2f);
+        Gamefeel.Instance.InitScreenshake(0.2f, 0.4f);
     }
 
     public bool IsDead()
@@ -340,6 +346,19 @@ public class Fighter : MonoBehaviour
         Vector3 impulseDir = (transform.position - opponent.transform.position).normalized;
         impulseDir.y = 0f;
         impact.AddImpact(impulseDir, force);
+    }
+
+    private void ParryFeedback()
+    {
+        ImpulseOppositToOpponent(7f);
+        fxManager.ParryFX();
+        Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
+    }
+
+    public void HitboxCollide()
+    {
+        ParryFeedback();
+        currentHitbox.SetAttacking(false);
     }
 
     public void SucceedAttack()
@@ -367,7 +386,21 @@ public class Fighter : MonoBehaviour
 		if(state == FighterState.Dash)
 		{
 			lastDash = Time.time;
-			ChangeState(FighterState.Idle);
+            if (attackBuffer)
+            {
+                ChangeState(FighterState.SetUpAttack);
+            }
+            else
+            {
+                ChangeState(FighterState.Idle);
+            }
 		}
 	}
+
+
+    public int getHp()
+    {
+        return hp;
+    }
+
 }
