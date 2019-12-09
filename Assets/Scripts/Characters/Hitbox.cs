@@ -13,7 +13,21 @@ public class Hitbox : MonoBehaviour
 		SetAttacking(false);
 	}
 
-	public void SetAttacking(bool newValue)
+    public bool IsAttacking()
+    {
+        return _attacking;
+    }
+
+    private void Update()
+    {
+        if (_attacking && opponent.currentHitbox.IsAttacking() && Vector3.Distance(opponent.currentHitbox.transform.position, transform.position) < 0.5f)
+        {
+            GetComponentInParent<Fighter>().HitboxCollide();
+            opponent.GetComponent<Fighter>().HitboxCollide();
+        }
+    }
+
+    public void SetAttacking(bool newValue)
 	{
 		_attacking = newValue;
 		attackLight.enabled = _attacking;
@@ -27,10 +41,6 @@ public class Hitbox : MonoBehaviour
 			opponent.Damage(1);
             GetComponentInParent<Fighter>().SucceedAttack();
             return;
-        }
-        if(collider.gameObject != null && collider.gameObject.GetComponent<Hitbox>() != null)
-        {
-            GetComponentInParent<Fighter>().HitboxCollide();
         }
     }
 }

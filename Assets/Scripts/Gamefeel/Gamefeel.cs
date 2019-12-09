@@ -98,17 +98,18 @@ public class Gamefeel : MonoBehaviour
 		}
 	}
 	
+    //Modifié pour adoucir le retour du shake
 	private IEnumerator Screenshake(){
 		inShake = true;
 		for(;;){
 			shakeCount+=Time.deltaTime;
 			Vector3 change = Random.insideUnitSphere * shakeCurve.Evaluate(shakeCount/shakeDuration) * shakeMagnitude;
-			cam.transform.localPosition += change;
-			positionChangeShake += change;
+			cam.transform.localPosition += change - positionChangeShake;
+			positionChangeShake = change;
 			if(shakeCount < shakeDuration){
 				yield return null;
 			}else{
-				cam.transform.localPosition -= positionChangeShake;
+                cam.transform.localPosition -= positionChangeShake;
 				break;
 			}
 		}
