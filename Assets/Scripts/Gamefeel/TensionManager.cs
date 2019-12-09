@@ -39,6 +39,5 @@ public class TensionManager : MonoBehaviour
     private void Update()
     {
         tension = Mathf.Max(0f, tension - tensionLoss*Time.deltaTime);
-        Debug.Log(tension);
     }
 }
