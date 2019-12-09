@@ -19,16 +19,23 @@ public class Physics : MonoBehaviour
 	private float dashSpeed = 2;
 	[SerializeField]
 	private float dashTime = 0.2f;
+	[Header("Wind Effect")]
+	[SerializeField]
+	private float windStrength = 10;
+	[SerializeField]
+	private float windSmooth = 10;
 
 
 
 	//private value
+	private Transform animator;
 	private Vector3 currentDirection;
 	[SerializeField, DisplayWithoutEdit]
 	private float currentSpeed;
 	private Vector3 gravity = new Vector3(0, -10, 0);
 	private bool isForce;
 	private float forceTime = 0;
+	private float windEffect = 0;
 
 	//accessors
 	public float speed => currentSpeed;
@@ -42,6 +49,7 @@ public class Physics : MonoBehaviour
 	private void Awake()
 	{
 		controller = GetComponent<CharacterController>();
+		animator = GetComponentInChildren<Animator>().transform;
 	}
 
 	public void AddForce(Vector3 dir)
@@ -60,7 +68,6 @@ public class Physics : MonoBehaviour
 
 	private void Update()
 	{
-
 		if (isForce)
 		{
 			if(forceTime <= dashTime)
@@ -76,21 +83,10 @@ public class Physics : MonoBehaviour
 			forceTime = 0;
 			currentSpeed = 0;
 		}
-
+		windEffect = Mathf.Lerp(windEffect, orientationVelocity * windStrength * currentSpeed,windSmooth * Time.deltaTime);
+		animator.localRotation = Quaternion.Euler(windEffect,0, 0);
 		isForce = false;
-
 		controller.Move((currentDirection * currentSpeed + gravity) * Time.deltaTime);
-
-		/*if (isForce)
-		{
-			currentSpeed = Mathf.Clamp(currentSpeed + acceleration * Time.deltaTime, 0, maxSpeed);
-		}
-		else
-		{
-			currentSpeed = Mathf.Clamp(currentSpeed - deceleration * Time.deltaTime, 0, maxSpeed);
-		}
-		controller.Move((currentDirection * currentSpeed + gravity) * Time.deltaTime);
-		isForce = false;*/
 	}
 
 }
