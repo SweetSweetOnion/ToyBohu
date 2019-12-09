@@ -326,6 +326,7 @@ public class Fighter : MonoBehaviour
             animator.SetTrigger("Death");
             ImpulseOppositToOpponent(20f);
             Gamefeel.Instance.InitScreenshake(0.3f, 0.8f);
+            Gamefeel.Instance.InitFreezeFrame(0.3f, 0.003f);
             return;
         }
         else
@@ -333,6 +334,7 @@ public class Fighter : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         ImpulseOppositToOpponent(15f);
+        Gamefeel.Instance.InitFreezeFrame(0.1f, 0.002f);
         Gamefeel.Instance.InitScreenshake(0.2f, 0.4f);
     }
 

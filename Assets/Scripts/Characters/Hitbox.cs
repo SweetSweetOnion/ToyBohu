@@ -20,7 +20,7 @@ public class Hitbox : MonoBehaviour
 
     private void Update()
     {
-        if (_attacking && opponent.currentHitbox.IsAttacking() && Vector3.Distance(opponent.currentHitbox.transform.position, transform.position) < 0.5f)
+        if (_attacking && opponent.currentHitbox.IsAttacking() && Vector3.SqrMagnitude(opponent.currentHitbox.transform.position- transform.position) < 0.5f * 0.5f)
         {
             GetComponentInParent<Fighter>().HitboxCollide();
             opponent.GetComponent<Fighter>().HitboxCollide();
