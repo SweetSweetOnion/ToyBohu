@@ -19,7 +19,7 @@ public class Fighter : MonoBehaviour
 	private Physics physics;
     private bool moved = false;
 
-    private Hitbox currentHitbox;
+    public Hitbox currentHitbox;
 	private float lastDash;
     private Impact impact;
     private Animator animator;
@@ -313,10 +313,8 @@ public class Fighter : MonoBehaviour
         {
             TensionManager.Instance.AddTension(35f);
             ChangeState(FighterState.Idle);
-            ImpulseOppositToOpponent(7f);
+            ParryFeedback();
             opponent.ImpulseOppositToOpponent(7f);
-			fxManager.ParryFX();
-            Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
             return;
         }
 
@@ -326,6 +324,9 @@ public class Fighter : MonoBehaviour
         {
             ChangeState(FighterState.Death);
             animator.SetTrigger("Death");
+            ImpulseOppositToOpponent(20f);
+            Gamefeel.Instance.InitScreenshake(0.3f, 0.8f);
+            return;
         }
         else
         {
@@ -347,9 +348,17 @@ public class Fighter : MonoBehaviour
         impact.AddImpact(impulseDir, force);
     }
 
+    private void ParryFeedback()
+    {
+        ImpulseOppositToOpponent(7f);
+        fxManager.ParryFX();
+        Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
+    }
+
     public void HitboxCollide()
     {
-        Debug.Log("Collide");
+        ParryFeedback();
+        currentHitbox.SetAttacking(false);
     }
 
     public void SucceedAttack()
