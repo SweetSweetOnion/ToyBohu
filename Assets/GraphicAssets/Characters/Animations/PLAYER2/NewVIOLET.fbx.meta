@@ -1,8 +1,44 @@
 fileFormatVersion: 2
-guid: 1386fb0a0cb630a48b53229aff76c9d2
+guid: d5a76c1e6354cff439ad5c837b844865
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -3047909122101221710
+    second: Armature|Armature|Armature|Armature|Armature|Armature|Armature|Cylinder.
+  - first:
+      74: 1243984284261420418
+    second: Armature|Armature|Armature|DASH|Armature|DASH
+  - first:
+      74: 3822128594932053105
+    second: Armature|Armature|Armature|DEATH|Armature|DEATH
+  - first:
+      74: 7952672174738638028
+    second: Armature|Armature|Armature|IDLE.001|Armature|IDLE.001
+  - first:
+      74: 9025861010803182453
+    second: Armature|Armature|Armature|OKATTACK|Armature|OKATTACK
+  - first:
+      74: 4283171901447300298
+    second: Armature|Armature|Armature|OKDASH|Armature|OKDASH
+  - first:
+      74: 7502178052868027967
+    second: Armature|Armature|Armature|OKDEATH|Armature|OKDEATH
+  - first:
+      74: -3731876016570303242
+    second: Armature|Armature|Armature|OKHIT|Armature|OKHIT
+  - first:
+      74: 4155425228199741485
+    second: Armature|Armature|Armature|OKIDLE|Armature|OKIDLE
+  - first:
+      74: 2417577835819132324
+    second: Armature|Armature|Armature|OKPARRY|Armature|OKPARRY
+  - first:
+      74: 3675659342649402022
+    second: Armature|Armature|Armature|OKRUN|Armature|OKRUN
+  - first:
+      74: 4967544896057021107
+    second: Armature|Armature|Armature|RUN|Armature|RUN
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +123,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
