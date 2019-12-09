@@ -825,7 +825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &277317389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4178,36 +4178,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c65f9b3f6687844ca3b94c5709a0840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCurve:
+  thisShakeCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.0038060565
-      value: 0.0037707593
-      inSlope: 10.333284
-      outSlope: 10.333284
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.09963989
-      value: 0.9940491
-      inSlope: -2.9785254
-      outSlope: -2.9785254
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.273969
-    - serializedVersion: 3
-      time: 1.0000013
-      value: 0.001281709
-      inSlope: 0.034310494
-      outSlope: 0.034310494
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.3085391
-      outWeight: 0
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  thisFreezeCurve:
+    serializedVersion: 2
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

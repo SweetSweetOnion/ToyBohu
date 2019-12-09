@@ -40,6 +40,15 @@ public class Gamefeel : MonoBehaviour
 	private Vector3 positionChangeShake;
 	private AnimationCurve shakeCurve;
 	private bool inShake = false;
+
+    public AnimationCurve thisShakeCurve;
+    public AnimationCurve thisFreezeCurve;
+
+    private float freezeMagnitude;
+    private float freezeDuration;
+    private float freezeCount;
+    private AnimationCurve freezeCurve;
+    private bool inFreeze = false;
 	
 	public void InitVertigo(Camera thisCam, GameObject thisTarget, float duration, float force, AnimationCurve curve){
 		if(!inVertigo){
@@ -79,11 +88,9 @@ public class Gamefeel : MonoBehaviour
 		inVertigo = false;
 	}
 
-    public AnimationCurve thisCurve;
-
     public void InitScreenshake(float duration, float force)
     {
-        InitScreenshake(Camera.main, duration, force, thisCurve);
+        InitScreenshake(Camera.main, duration, force, thisShakeCurve);
     }
 	
 	public void InitScreenshake(Camera thisCam, float duration, float force, AnimationCurve curve){
@@ -102,6 +109,10 @@ public class Gamefeel : MonoBehaviour
 	private IEnumerator Screenshake(){
 		inShake = true;
 		for(;;){
+            while (inFreeze)
+            {
+                yield return null;
+            }
 			shakeCount+=Time.deltaTime;
 			Vector3 change = Random.insideUnitSphere * shakeCurve.Evaluate(shakeCount/shakeDuration) * shakeMagnitude;
 			cam.transform.localPosition += change - positionChangeShake;
@@ -115,4 +126,43 @@ public class Gamefeel : MonoBehaviour
 		}
 		inShake = false;
 	}
+
+    public void InitFreezeFrame(float duration, float force)
+    {
+        InitFreezeFrame(duration, force, thisFreezeCurve);
+    }
+
+    public void InitFreezeFrame(float duration, float force, AnimationCurve curve)
+    {
+        if (!inFreeze)
+        {
+            freezeDuration = duration;
+            freezeMagnitude = force;
+            freezeCurve = curve;
+            StartCoroutine("FreezeFrame");
+        }
+    }
+
+    private IEnumerator FreezeFrame()
+    {
+        inFreeze = true;
+        float original = Time.timeScale;
+        freezeCount = 0f;
+        for(;;)
+        {
+            freezeCount += Time.unscaledDeltaTime;
+            float freezeValue = freezeCurve.Evaluate(freezeCount / freezeDuration) * freezeMagnitude;
+            Time.timeScale = 0f;
+            if (freezeCount < freezeDuration) {
+                yield return new WaitForSecondsRealtime(freezeValue);
+                Time.timeScale = original;
+            }
+            else
+            {
+                Time.timeScale = original;
+                break;
+            }
+        }
+        inFreeze = false;
+    }
 }
