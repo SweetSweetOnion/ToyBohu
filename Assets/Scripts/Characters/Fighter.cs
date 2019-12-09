@@ -25,6 +25,7 @@ public class Fighter : MonoBehaviour
     private Animator animator;
 	private FXManager fxManager;
 	private Dash dash;
+    private bool attackBuffer;
 
 	//Counters
 	private float counterInState;
@@ -43,6 +44,7 @@ public class Fighter : MonoBehaviour
 
     public void Initialize()
     {
+        attackBuffer = false;
         hp = maxHP;
         state = FighterState.Idle;
         impact.ResetImpact();
@@ -169,9 +171,8 @@ public class Fighter : MonoBehaviour
 		if(nextState != state)
 		{
 			state = nextState;
-            //GetComponent<Dash>().OnStateChange(nextState);
-		}
-       
+        }
+        attackBuffer = false;
     }
     
 
@@ -288,6 +289,10 @@ public class Fighter : MonoBehaviour
             ChangeState(FighterState.SetUpAttack);
             return true;
         }
+        if(state == FighterState.Dash)
+        {
+            attackBuffer = true;
+        }
         return false;
     }
 
@@ -306,7 +311,6 @@ public class Fighter : MonoBehaviour
         }
         if (state == FighterState.Block)
         {
-            Debug.Log("Parade !");
             TensionManager.Instance.AddTension(35f);
             ChangeState(FighterState.Idle);
             ImpulseOppositToOpponent(7f);
@@ -367,7 +371,14 @@ public class Fighter : MonoBehaviour
 		if(state == FighterState.Dash)
 		{
 			lastDash = Time.time;
-			ChangeState(FighterState.Idle);
+            if (attackBuffer)
+            {
+                ChangeState(FighterState.SetUpAttack);
+            }
+            else
+            {
+                ChangeState(FighterState.Idle);
+            }
 		}
 	}
 }
