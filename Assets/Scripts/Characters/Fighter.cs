@@ -32,11 +32,11 @@ public class Fighter : MonoBehaviour
 
     //Serialized fields
     [SerializeField]private Fighter opponent;
-	[SerializeField]private float dashCooldown = 0.5f;
-	[SerializeField]private float setUpAttackDuration = 0.2f;
-	[SerializeField]private float blockDuration = 0.5f;
+	[SerializeField]private float dashCooldown = 0.2f;
+	[SerializeField]private float setUpAttackDuration = 0.1f;
+	[SerializeField]private float blockDuration = 0.2f;
 	[SerializeField]private float attackDuration = 0.2f;
-	[SerializeField]private float attackLagDuration = 0.05f;
+	[SerializeField]private float attackLagDuration = 0.2f;
 	//accessors
 	public FighterState currentState => state;
 	public Vector2 direction => currentDirection;
@@ -344,6 +344,11 @@ public class Fighter : MonoBehaviour
         Vector3 impulseDir = (transform.position - opponent.transform.position).normalized;
         impulseDir.y = 0f;
         impact.AddImpact(impulseDir, force);
+    }
+
+    public void HitboxCollide()
+    {
+        Debug.Log("Collide");
     }
 
     public void SucceedAttack()

@@ -22,7 +22,7 @@ public class Gamefeel : MonoBehaviour
 			return _instance;
 		}
 	}
-	
+
 	private Camera cam;
 	private GameObject target;
 	private float startDistance;
