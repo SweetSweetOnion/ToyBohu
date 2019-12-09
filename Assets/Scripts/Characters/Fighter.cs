@@ -316,6 +316,7 @@ public class Fighter : MonoBehaviour
             ImpulseOppositToOpponent(7f);
             opponent.ImpulseOppositToOpponent(7f);
 			fxManager.ParryFX();
+            Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
             return;
         }
 
@@ -331,7 +332,7 @@ public class Fighter : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         ImpulseOppositToOpponent(15f);
-        Gamefeel.Instance.InitScreenshake(0.2f, 0.2f);
+        Gamefeel.Instance.InitScreenshake(0.2f, 0.4f);
     }
 
     public bool IsDead()
