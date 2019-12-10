@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public enum GameState { GameStart, Fight, RoundStart, RoundEnd, GameEnd };
@@ -92,13 +93,13 @@ public class GameManager : MonoBehaviour
 
     public bool PlayerCanInteract()
     {
-        return state == GameState.Fight;
+        return state == GameState.Fight || state == GameState.RoundEnd;
     }
 
     public IEnumerator Restart()
     {
         yield return new WaitForSeconds(3);
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void TryWin()
@@ -110,7 +111,6 @@ public class GameManager : MonoBehaviour
                 ++victory[(i + 1) % 2];
                 if (victory[(i + 1) % 2] >= 2)
                 {
-                    //End of the game
                     state = GameState.GameEnd;
                     StartCoroutine("Restart");
                 }
