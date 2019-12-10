@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class Round : MonoBehaviour
 {
     public Sprite[] RoundSprite;
-
+    [SerializeField] private int fighterID;
     public Image RoundUI;
 
 
     // Update is called once per frame
     void Update()
     {
-        RoundUI.sprite = RoundSprite[GameManager.Instance.GetVictory(0)];
+        RoundUI.sprite = RoundSprite[GameManager.Instance.GetVictory(fighterID)];
     }
 }
