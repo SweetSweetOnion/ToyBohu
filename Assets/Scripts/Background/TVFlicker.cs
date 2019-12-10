@@ -31,6 +31,7 @@ public class TVFlicker : MonoBehaviour
 
 	private IEnumerator TVRoutine()
 	{
+		AudioFx.AudioTV();
 		isRunning = true;
 		rend.material = tvOn;
 		float t = 0;

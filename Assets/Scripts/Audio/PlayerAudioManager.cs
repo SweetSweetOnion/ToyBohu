@@ -13,16 +13,38 @@ public class PlayerAudioManager : MonoBehaviour
     [FMODUnity.EventRef, SerializeField]
     private string block_armesEvent;
     [FMODUnity.EventRef, SerializeField]
-    private string Hit_bodyEvent;
+    private string hit_bodyEvent;
     [FMODUnity.EventRef, SerializeField]
-    private string Epee_out_fourreauEvent;
+    private string epee_out_fourreauEvent;
     [FMODUnity.EventRef, SerializeField]
-    private string Epee_in_fourreauEvent;
+    private string epee_in_fourreauEvent;
     [FMODUnity.EventRef, SerializeField]
-    private string FootstepsEvent;
-    
+    private string footstepsEvent;
+	private FMOD.Studio.EventInstance footInstance;
 
-    public void AudioDash()
+	[FMODUnity.EventRef, SerializeField]
+	private string respirationFighterEvent;
+	[FMODUnity.EventRef, SerializeField]
+	private string voix_attaqueEvent;
+	[FMODUnity.EventRef , SerializeField]
+	private string voix_defenseEvent;
+	[FMODUnity.EventRef , SerializeField]
+	private string voix_mortEvent;
+
+	private FMOD.Studio.EventInstance respiration;
+
+	
+
+
+	private void Start()
+	{
+		footInstance = RuntimeManager.CreateInstance(footstepsEvent);
+		//footInstance.start();
+		respiration = RuntimeManager.CreateInstance(respirationFighterEvent);
+	}
+
+
+	 public void AudioDash()
     {
         RuntimeManager.PlayOneShot(dashEvent);
     }
@@ -41,20 +63,59 @@ public class PlayerAudioManager : MonoBehaviour
     }
     public void AudioHitBody()
     {
-        RuntimeManager.PlayOneShot(Hit_bodyEvent);
+        RuntimeManager.PlayOneShot(hit_bodyEvent);
     }
     public void AudioEpee_Out()
     {
-        RuntimeManager.PlayOneShot(Epee_out_fourreauEvent);
+        RuntimeManager.PlayOneShot(epee_out_fourreauEvent);
     }
     public void AudioEpee_in()
     {
-        RuntimeManager.PlayOneShot(Epee_in_fourreauEvent);
+        RuntimeManager.PlayOneShot(epee_in_fourreauEvent);
     }
-    public void AudioFootsteps()
+	
+    public void AudioFootsteps(int audioMaterial)
     {
-        RuntimeManager.PlayOneShot(FootstepsEvent);
+		footInstance = RuntimeManager.CreateInstance(footstepsEvent);
+		footInstance.setParameterByName("Tapis", audioMaterial);
+		RuntimeManager.AttachInstanceToGameObject(footInstance, transform, null as Rigidbody);
+		footInstance.start();
+		//RuntimeManager.PlayOneShot(footstepsEvent);
     }
 
+	public void AudioRespiration(bool b)
+	{
+		//TODO
+		/*if (b)
+		{
+			bool p = false;
+			respiration.getPaused(out p);
+			if (p)
+			{
+				respiration.start();
+				Debug.Log("Start");
+			}
+		}
+		else
+		{
+			respiration.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+		}*/
+		//RuntimeManager.PlayOneShot(respirationFighterEvent);
+	}
+
+	public void AudioVoixAttaque()
+	{
+		RuntimeManager.PlayOneShot(voix_attaqueEvent);
+	}
+
+	public void AudioVoixDefense()
+	{
+		RuntimeManager.PlayOneShot(voix_defenseEvent);
+	}
+
+	public void AudioVoixMort()
+	{
+		RuntimeManager.PlayOneShot(voix_mortEvent);
+	}
 }
 

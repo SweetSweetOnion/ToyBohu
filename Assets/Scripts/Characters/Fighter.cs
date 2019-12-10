@@ -129,6 +129,7 @@ public class Fighter : MonoBehaviour
         else
         {
             animator.SetFloat("Speed", 0f);
+
         }
 		animator.SetFloat("SpeedScale", physics.orientationVelocity * physics.velocity);
     }
@@ -158,6 +159,7 @@ public class Fighter : MonoBehaviour
                     TensionManager.Instance.AddTension(15f);
                     playerAudioManager.AudioEpee_Out();
                     playerAudioManager.AudioAttaque1_Woosh();
+					playerAudioManager.AudioVoixAttaque();
                     break;
                 }
             case FighterState.Attack:
@@ -167,14 +169,15 @@ public class Fighter : MonoBehaviour
                 }
             case FighterState.AttackLag:
                 {
-                    playerAudioManager.AudioEpee_in();
+                   //playerAudioManager.AudioEpee_in();
                     currentHitbox.SetAttacking(false);
 					break;
                 }
             case FighterState.Death:
                 {
-                   // Destroy(gameObject);
-                    break;
+					playerAudioManager.AudioVoixMort();
+					// Destroy(gameObject);
+					break;
                 }
         }
 		if(nextState != state)
@@ -269,6 +272,10 @@ public class Fighter : MonoBehaviour
         Vector2 movement = dir * speed;
         Movement(movement);
         animator.SetFloat("Speed",movement.magnitude);
+		if (!moved)
+		{
+			playerAudioManager.AudioRespiration(true);
+		}
         moved = true;
         return true;
     }
@@ -364,6 +371,7 @@ public class Fighter : MonoBehaviour
         ImpulseOppositToOpponent(7f);
         fxManager.ParryFX();
         playerAudioManager.AudioBlockArmes();
+		playerAudioManager.AudioVoixDefense();
         Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
     }
 

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 
-public enum GameState { GameStart, Fight, RoundStart, RoundEnd, GameEnd };
+public enum GameState { GameStart,Tuto, Fight, RoundStart, RoundEnd, GameEnd };
 
 public class GameManager : MonoBehaviour
 {
@@ -28,11 +28,13 @@ public class GameManager : MonoBehaviour
     }
 
     private int[] victory = new int[2];
+	[SerializeField]private AudioManager audioManager;
     [SerializeField] private GameObject[] prefabs;
     [SerializeField] private Fighter[] fighters;
     private Vector3[] startingPositions = new Vector3[2];
     private PlayerInputManager playerInputManager;
     private GameState state = GameState.GameStart;
+
 
 
     private void Start()
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
         {
             startingPositions[i] = fighters[i].transform.position;
         }
+
+		InitRound();
     }
 
     private void Update()
@@ -86,7 +90,8 @@ public class GameManager : MonoBehaviour
             fighters[i].Initialize();
             fighters[i].SetOpponent(fighters[(i + 1) % 2]);
         }
-        StartCoroutine("DelayBeforeFight");
+		UpdateAudio();
+		StartCoroutine("DelayBeforeFight");
     }
 
     //Public methods;
@@ -123,9 +128,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+	private void UpdateAudio()
+	{
+		switch (GetRoundId())
+		{
+			case 0:
+				audioManager.Round1Audio();
+				break;
+			case 1:
+				audioManager.Round2Audio();
+				break;
+			case 2:
+				audioManager.Round3Audio();
+				break;
+		}
+	}
+
     public int GetVictory(int index)
     {
         return victory[index];
     }
+
+	public int GetRoundId()
+	{
+		return victory[0] + victory[1];
+	}
 
 }

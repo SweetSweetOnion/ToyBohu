@@ -12,7 +12,12 @@ public class Car : MonoBehaviour
     private float counter = 0f;
     public float direction = 0f;
 
-    void Update()
+	private void OnEnable()
+	{
+		AudioFx.AudioCar();
+	}
+
+	void Update()
     {
         counter += Time.deltaTime;
         transform.position += new Vector3(Time.deltaTime * speed * -direction,0f,0f);
@@ -24,6 +29,7 @@ public class Car : MonoBehaviour
 
     public static void SpawnCar()
     {
+		
         float direction = 1f;
         if (Random.value >= 0.5f)
         {
