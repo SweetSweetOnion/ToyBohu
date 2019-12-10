@@ -11,6 +11,6 @@ public class FootStepManager : MonoBehaviour
 
 	public void FootStepEvent()
 	{
-		//pam.AudioFootsteps();
+		pam.AudioFootsteps(0);
 	}
 }

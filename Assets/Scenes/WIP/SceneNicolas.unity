@@ -413,11 +413,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107005887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: -306, y: -171, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1697799214}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112830462
 GameObject:
@@ -747,7 +747,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cd3c9078cb06c7144b13b412b65bb6d5, type: 3}
   - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
   - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
-  fighterID: 0
   RoundUI: {fileID: 162656659}
 --- !u!114 &162656659
 MonoBehaviour:
@@ -1268,6 +1267,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363176375}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &412138784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8763728065837583851, guid: 81f24375ff08d0643b0790048a140acd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5995296382535828204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &412138785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412138784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b89c03518ed7d44ca5adffa5d46843a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &460600178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1744,6 +1761,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &825100592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 825100593}
+  - component: {fileID: 825100594}
+  m_Layer: 0
+  m_Name: UiVoix
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &825100593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825100592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1697799214}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &825100594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825100592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1773eb2ad6569fb48b5a53d44f9656b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LooseEvent: 
+  Toy_bohuEvent: 
+  PurpleEvent: 
+  PurpleWinsEvent: 
+  Round1Event: 
+  Round2Event: 
+  Round3Event: 
+  WinEvent: 
+  YellowEvent: 
+  YellowWinsEvent: 
 --- !u!1 &879427110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,7 +2362,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1149383516
 GameObject:
@@ -2770,7 +2840,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cd3c9078cb06c7144b13b412b65bb6d5, type: 3}
   - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
   - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
-  fighterID: 1
   RoundUI: {fileID: 1442616486}
 --- !u!114 &1442616486
 MonoBehaviour:
@@ -2995,6 +3064,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1478215984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1499678425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 241838434650459948, guid: 58af3b4bde04a9a46abacfb1db15b81e,
+    type: 3}
+  m_PrefabInstance: {fileID: 241838433305351489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1499678426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499678425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b89c03518ed7d44ca5adffa5d46843a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499704977
 GameObject:
   m_ObjectHideFlags: 0
@@ -3466,6 +3553,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974b44ed0afceb44eba07c9b634b1f6e, type: 3}
+--- !u!1 &1697799213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697799214}
+  m_Layer: 0
+  m_Name: SoundDesign
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697799214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697799213}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 306, y: 172, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 107005889}
+  - {fileID: 825100593}
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1833190171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,7 +4179,7 @@ RectTransform:
   - {fileID: 1442616484}
   - {fileID: 162656657}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4213,12 +4332,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/Musique/Musique Tutoriel_Combat
-  PlayEvent: 1
+  PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: Rounds
+    Value: 1
+  - Name: "Intensit\xE9 Combat"
+    Value: 100
+  - Name: The Last PV
+    Value: 0
+  - Name: To Tutoriel
+    Value: 0
+  - Name: "To D\xE9but Combat"
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
@@ -4373,6 +4502,38 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: hit_bodyEvent
+      value: event:/Joueur/Hit Body_etape2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: epee_out_fourreauEvent
+      value: event:/Joueur/Epee_sortFourreau_etape0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: epee_in_fourreauEvent
+      value: event:/Joueur/EpeeRentreFourreau_Etape3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: footstepsEvent
+      value: event:/Joueur/Footsteps_place
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: respirationFighterEvent
+      value: event:/Voix/Respiration fighter 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: voix_attaqueEvent
+      value: event:/Voix/Voix_attaque_fighter2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: voix_defenseEvent
+      value: event:/Voix/Voix_defense_fighter 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943046054, guid: 58af3b4bde04a9a46abacfb1db15b81e, type: 3}
+      propertyPath: voix_mortEvent
+      value: event:/Voix/Voix_mort_fighter 2
+      objectReference: {fileID: 0}
     - target: {fileID: 241838433117696521, guid: 58af3b4bde04a9a46abacfb1db15b81e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4507,6 +4668,38 @@ PrefabInstance:
     - target: {fileID: 995569177, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: hit_bodyEvent
+      value: event:/Joueur/Hit Body_etape2
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: epee_out_fourreauEvent
+      value: event:/Joueur/Epee_sortFourreau_etape0
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: epee_in_fourreauEvent
+      value: event:/Joueur/EpeeRentreFourreau_Etape3
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: footstepsEvent
+      value: event:/Joueur/Footsteps_place
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: respirationFighterEvent
+      value: event:/Voix/Respiration fighter 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: voix_attaqueEvent
+      value: event:/Voix/Respiration fighter 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: voix_defenseEvent
+      value: event:/Voix/Voix_defense_fighter1
+      objectReference: {fileID: 0}
+    - target: {fileID: 995569178, guid: 81f24375ff08d0643b0790048a140acd, type: 3}
+      propertyPath: voix_mortEvent
+      value: event:/Voix/Voix_mort_fighter 1
       objectReference: {fileID: 0}
     - target: {fileID: 5747822269267722232, guid: 81f24375ff08d0643b0790048a140acd,
         type: 3}
