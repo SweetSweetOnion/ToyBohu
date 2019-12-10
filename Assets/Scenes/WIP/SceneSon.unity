@@ -400,12 +400,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112830462}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &130829992 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8748314353353105026, guid: 81f24375ff08d0643b0790048a140acd,
-    type: 3}
-  m_PrefabInstance: {fileID: 5995296382535828204}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149911017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,57 +1652,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 899166495}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &995569176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 995569177}
-  - component: {fileID: 995569178}
-  m_Layer: 0
-  m_Name: Sound Design
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &995569177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995569176}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2425673, y: 1, z: -9.364812}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 130829992}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &995569178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995569176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605485a6484239f409710972724b08e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashEvent: event:/UI/Loose
-  attaque1_etape1_wooshEvent: event:/Joueur/Attaque1_Woosh_etape1 2
-  attaque2_etape1_wooshEvent: event:/Joueur/Attaque2_Woosh_etape1
-  block_armesEvent: event:/Joueur/Block_armes_etape2
-  Hit_bodyEvent: event:/Joueur/Hit Body_etape2
-  Epee_out_fourreauEvent: event:/Joueur/Epee_sortFourreau_etape0
-  Epee_in_fourreauEvent: event:/Joueur/EpeeRentreFourreau_Etape3
-  FootstepsEvent: event:/Joueur/Footsteps_place
 --- !u!1 &1014438177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,27 +2467,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c65f9b3f6687844ca3b94c5709a0840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisCurve:
+  thisShakeCurve:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  thisFreezeCurve:
+    serializedVersion: 2
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -2647,7 +2578,7 @@ Transform:
   - {fileID: 899166496}
   - {fileID: 2052623733}
   - {fileID: 1950565124}
-  - {fileID: 1870111444}
+  - {fileID: 2004964031}
   - {fileID: 785694972}
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -3227,12 +3158,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1386fb0a0cb630a48b53229aff76c9d2, type: 3}
---- !u!4 &1870111444 stripped
+--- !u!4 &1870111444
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 1386fb0a0cb630a48b53229aff76c9d2,
     type: 3}
   m_PrefabInstance: {fileID: 1870111443}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146250564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2004964031}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1933013108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3323,57 +3263,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1933013108}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1943046052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1943046053}
-  - component: {fileID: 1943046054}
-  m_Layer: 0
-  m_Name: Sound Design (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1943046053
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943046052}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.26, y: 1, z: -9.364812}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2129717483}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1943046054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943046052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605485a6484239f409710972724b08e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashEvent: event:/UI/Loose
-  attaque1_etape1_wooshEvent: event:/Joueur/Attaque1_Woosh_etape1 2
-  attaque2_etape1_wooshEvent: event:/Joueur/Attaque2_Woosh_etape1
-  block_armesEvent: event:/Joueur/Block_armes_etape2
-  Hit_bodyEvent: event:/Joueur/Hit Body_etape2
-  Epee_out_fourreauEvent: event:/Joueur/Epee_sortFourreau_etape0
-  Epee_in_fourreauEvent: event:/Joueur/EpeeRentreFourreau_Etape3
-  FootstepsEvent: event:/Joueur/Footsteps_place
 --- !u!1001 &1950565123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3469,6 +3358,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1950565123}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2004964030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1870111443}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2004964031}
+  m_Layer: 0
+  m_Name: "Mur fen\xEAtre stores (Missing Prefab)"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2004964031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1870111443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004964030}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1870111444}
+  m_Father: {fileID: 1543817177}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2052623732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,12 +3529,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2129717483 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8805504066518781215, guid: 58af3b4bde04a9a46abacfb1db15b81e,
-    type: 3}
-  m_PrefabInstance: {fileID: 241838433305351489}
+--- !u!1 &2146250564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1870111443}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870111444}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &241838433305351489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3642,11 +3572,6 @@ PrefabInstance:
       propertyPath: opponent
       value: 
       objectReference: {fileID: 3052266021494430826}
-    - target: {fileID: 8805504066518781211, guid: 58af3b4bde04a9a46abacfb1db15b81e,
-        type: 3}
-      propertyPath: attackLagDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 8805504066518781215, guid: 58af3b4bde04a9a46abacfb1db15b81e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3788,11 +3713,6 @@ PrefabInstance:
       propertyPath: opponent
       value: 
       objectReference: {fileID: 8748314352549877850}
-    - target: {fileID: 8748314353353105030, guid: 81f24375ff08d0643b0790048a140acd,
-        type: 3}
-      propertyPath: attackLagDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 8748314353353105048, guid: 81f24375ff08d0643b0790048a140acd,
         type: 3}
       propertyPath: m_Name

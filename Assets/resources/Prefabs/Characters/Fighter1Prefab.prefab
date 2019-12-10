@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &995569176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995569177}
+  - component: {fileID: 995569178}
+  m_Layer: 0
+  m_Name: Sound Design
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995569177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995569176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.2425673, y: 1, z: -9.364812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8748314353353105026}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995569178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995569176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605485a6484239f409710972724b08e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashEvent: event:/UI/Loose
+  attaque1_etape1_wooshEvent: event:/Joueur/Attaque1_Woosh_etape1 2
+  attaque2_etape1_wooshEvent: event:/Joueur/Attaque2_Woosh_etape1
+  block_armesEvent: event:/Joueur/Block_armes_etape2
+  Hit_bodyEvent: event:/Joueur/Hit Body_etape2
+  Epee_out_fourreauEvent: event:/Joueur/Epee_sortFourreau_etape0
+  Epee_in_fourreauEvent: event:/Joueur/EpeeRentreFourreau_Etape3
+  FootstepsEvent: event:/Joueur/Footsteps_place
 --- !u!1 &273749173952783950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,6 +2347,7 @@ Transform:
   m_Children:
   - {fileID: 8974346145601216237}
   - {fileID: 5747822269267722232}
+  - {fileID: 995569177}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2320,12 +2372,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  currentHitbox: {fileID: 0}
   opponent: {fileID: 0}
   dashCooldown: 0.2
   setUpAttackDuration: 0.1
   blockDuration: 0.2
   attackDuration: 0.2
-  attackLagDuration: 0.05
+  attackLagDuration: 0.2
 --- !u!114 &8748314353353105031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2646,6 +2699,8 @@ MonoBehaviour:
   normalSpeed: 1
   dashSpeed: 2
   dashTime: 0.2
+  windStrength: 10
+  windSmooth: 10
   currentSpeed: 0
 --- !u!1 &8763728065837583851
 GameObject:
