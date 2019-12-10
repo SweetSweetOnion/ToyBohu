@@ -62,14 +62,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator DelayBeforeNewRound()
+    {
+        state = GameState.RoundEnd;
+        yield return new WaitForSeconds(2);
+        InitRound();
+    }
+
+    private IEnumerator DelayBeforeFight()
+    {
+        state = GameState.RoundStart;
+        yield return new WaitForSeconds(1);
+        state = GameState.Fight;
+    }
+
     private void InitRound()
     {
-        for(int i = 0; i < 2; ++i)
+        state = GameState.RoundStart;
+        for (int i = 0; i < 2; ++i)
         {
-            fighters[i].transform.position = startingPositions[i];
+            fighters[i].GetComponent<Physics>().DirectMoveAt(startingPositions[i]);
             fighters[i].Initialize();
             fighters[i].SetOpponent(fighters[(i + 1) % 2]);
         }
+        StartCoroutine("DelayBeforeFight");
     }
 
     //Public methods;
@@ -77,6 +93,12 @@ public class GameManager : MonoBehaviour
     public bool PlayerCanInteract()
     {
         return state == GameState.Fight;
+    }
+
+    public IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(3);
+        
     }
 
     public void TryWin()
@@ -89,11 +111,12 @@ public class GameManager : MonoBehaviour
                 if (victory[(i + 1) % 2] >= 2)
                 {
                     //End of the game
-                    Debug.Log("End of the game");
+                    state = GameState.GameEnd;
+                    StartCoroutine("Restart");
                 }
                 else
                 {
-                    InitRound();
+                    StartCoroutine("DelayBeforeNewRound");
                 }
                 return;
             }

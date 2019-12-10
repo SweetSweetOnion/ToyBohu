@@ -49,6 +49,7 @@ public class Fighter : MonoBehaviour
         hp = maxHP;
         state = FighterState.Idle;
         impact.ResetImpact();
+        animator.SetTrigger("Initialize");
     }
 
     /**
