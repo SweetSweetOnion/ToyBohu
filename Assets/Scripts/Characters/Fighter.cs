@@ -49,6 +49,8 @@ public class Fighter : MonoBehaviour
         hp = maxHP;
         state = FighterState.Idle;
         impact.ResetImpact();
+        animator.SetTrigger("Initialize");
+        FaceOpponent();
     }
 
     /**
@@ -165,7 +167,7 @@ public class Fighter : MonoBehaviour
                 }
             case FighterState.AttackLag:
                 {
-                    //playerAudioManager.AudioEpee_in();
+                    playerAudioManager.AudioEpee_in();
                     currentHitbox.SetAttacking(false);
 					break;
                 }

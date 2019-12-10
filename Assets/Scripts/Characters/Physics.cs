@@ -66,6 +66,13 @@ public class Physics : MonoBehaviour
 		controller.Move(move);
 	}
 
+    public void DirectMoveAt(Vector3 move)
+    {
+        controller.enabled = false;
+        transform.position = move;
+        controller.enabled = true;
+    }
+
 	private void Update()
 	{
 		if (isForce)
