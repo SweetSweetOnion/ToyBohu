@@ -33,7 +33,8 @@ public class EventManager : MonoBehaviour
             counter = 0f;
             if (Random.value > 0.5f)
             {
-                Car.SpawnCar();
+				
+				Car.SpawnCar();
                 if(Random.value > 0.5f)
                 {
                     StartCoroutine("SpawnCarAfterABit");
@@ -51,7 +52,7 @@ public class EventManager : MonoBehaviour
 
 	private IEnumerator SpawnCarAfterABit()
     {
-        float rand = Random.Range(0.4f, 1.5f);
+		float rand = Random.Range(0.4f, 1.5f);
         yield return new WaitForSeconds(rand);
         Car.SpawnCar();
     }

@@ -387,7 +387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &107005888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +405,7 @@ MonoBehaviour:
   Ambiance_Round3Event: "event:/Environnement/Ambiance int\xE9rieur round 3"
   Ambiance_ExterieurEvent: "event:/Environnement/Ambiance ext\xE9rieur"
   RonflementsEvent: event:/Environnement/Ronflement enfant
+  musicEvent: event:/Musique/Musique Tutoriel_Combat
 --- !u!4 &107005889
 Transform:
   m_ObjectHideFlags: 0
@@ -2623,6 +2624,7 @@ GameObject:
   - component: {fileID: 1297650284}
   - component: {fileID: 1297650283}
   - component: {fileID: 1297650282}
+  - component: {fileID: 1297650281}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2630,6 +2632,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1297650281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297650280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!114 &1297650282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2786,6 +2801,52 @@ Transform:
   m_Father: {fileID: 917095157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 36.232002, y: 1.4590001, z: -6.4400005}
+--- !u!1 &1323779207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1323779208}
+  - component: {fileID: 1323779209}
+  m_Layer: 0
+  m_Name: TV FX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1323779208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323779207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1697799214}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1323779209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323779207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af26e4fc58adca4a8c15a10e2a6a465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightningAudio: event:/Environnement/Tonerre
+  tvAudio: "event:/Environnement/T\xE9l\xE9 on"
+  carAudio: event:/Environnement/Voiture passage L to R
 --- !u!1 &1442616483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,6 +3288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c64a21610df94ba5a28414009205f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 107005888}
   prefabs:
   - {fileID: 1990265638}
   - {fileID: 1880298268}
@@ -3582,6 +3644,7 @@ Transform:
   m_Children:
   - {fileID: 107005889}
   - {fileID: 825100593}
+  - {fileID: 1323779208}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4339,7 +4402,7 @@ MonoBehaviour:
   Preload: 0
   Params:
   - Name: Rounds
-    Value: 1
+    Value: 2
   - Name: "Intensit\xE9 Combat"
     Value: 100
   - Name: The Last PV

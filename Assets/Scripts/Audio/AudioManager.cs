@@ -16,31 +16,46 @@ public class AudioManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string RonflementsEvent;
 
-	public StudioEventEmitter musicEvent;
+	[FMODUnity.EventRef]
+	public string musicEvent;
+
+	private FMOD.Studio.EventInstance musicInstance;
+	
 
     private void Start()
     {
-		//RuntimeManager.PlayOneShot(Ambiance_ExterieurEvent);
-		//RuntimeManager.PlayOneShot(RonflementsEvent);
-		Round2Audio();
+		musicInstance = RuntimeManager.CreateInstance(musicEvent);
+		musicInstance.start();
     }
 
+	public void Tutoriel()
+	{
+		musicInstance.setParameterByName("To Début Combat", 0);
+		musicInstance.setParameterByName("To Tutoriel", 0);
+	}
 
-    public void Round1Audio()
+	public void InitRound1()
+	{
+		musicInstance.setParameterByName("To Début Combat", 1);
+	}
+
+	public void Round1Audio()
     {
         RuntimeManager.PlayOneShot(Ambiance_BaseEvent);
-		musicEvent.SetParameter("Rounds", 1);
-    }
+		musicInstance.setParameterByName("To Début Combat", 1);
+		musicInstance.setParameterByName("To Tutoriel", 0);
+		musicInstance.setParameterByName("Rounds", 0);
+	}
 
     public void Round2Audio()
     {
         RuntimeManager.PlayOneShot(Ambiance_Round2Event);
-		musicEvent.SetParameter("Rounds", 2);
+		musicInstance.setParameterByName("Rounds", 2);
 	}
 
     public void Round3Audio()
     {
         RuntimeManager.PlayOneShot(Ambiance_Round3Event);
-		musicEvent.SetParameter("Rounds", 3);
+		musicInstance.setParameterByName("Rounds", 3);
 	}
 }
