@@ -45,9 +45,11 @@ public class EventManager : MonoBehaviour
                 StartCoroutine("SpawnLightningAfterABit");
             }
         }
-    }
+		//to do : TVFlicker.instance.Trigger();
 
-    private IEnumerator SpawnCarAfterABit()
+	}
+
+	private IEnumerator SpawnCarAfterABit()
     {
         float rand = Random.Range(0.4f, 1.5f);
         yield return new WaitForSeconds(rand);
@@ -66,4 +68,6 @@ public class EventManager : MonoBehaviour
             Lightning.SpawnLightning();
         }
     }
+
+	
 }

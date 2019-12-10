@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TVFlicker : MonoBehaviour
 {
+	public static TVFlicker instance;
 
 	[SerializeField]private Material tvOn;
 	[SerializeField]private Material tvOff;
@@ -19,16 +20,9 @@ public class TVFlicker : MonoBehaviour
 	{
 		rend = GetComponent<MeshRenderer>();
 		areaLight = GetComponentInChildren<Light>();
-		Trigger();
+		instance = this;
 	}
 
-    private void Update()
-    {
-		if(Random.value > 0.99f)
-		{
-			Trigger();
-		}
-	}
 
 	public void Trigger()
 	{
