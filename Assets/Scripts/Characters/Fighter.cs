@@ -25,6 +25,7 @@ public class Fighter : MonoBehaviour
     private Animator animator;
 	private FXManager fxManager;
 	private Dash dash;
+    private PlayerAudioManager playerAudioManager;
     private bool attackBuffer;
 
 	//Counters
@@ -48,6 +49,8 @@ public class Fighter : MonoBehaviour
         hp = maxHP;
         state = FighterState.Idle;
         impact.ResetImpact();
+        animator.SetTrigger("Initialize");
+        FaceOpponent();
     }
 
     /**
@@ -70,6 +73,7 @@ public class Fighter : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 		fxManager = GetComponent<FXManager>();
 		dash = GetComponent<Dash>();
+        playerAudioManager = GetComponentInChildren<PlayerAudioManager>();
     }
 
 	void Start()
@@ -125,7 +129,9 @@ public class Fighter : MonoBehaviour
         else
         {
             animator.SetFloat("Speed", 0f);
+
         }
+		animator.SetFloat("SpeedScale", physics.orientationVelocity * physics.velocity);
     }
 
     /**
@@ -144,12 +150,16 @@ public class Fighter : MonoBehaviour
 					dash.InitDash();
                     TensionManager.Instance.AddTension(10f);
 					fxManager.DashFx();
+                    playerAudioManager.AudioDash();
                     break;
                 }
             case FighterState.SetUpAttack:
                 {
                     animator.SetTrigger("Attack");
                     TensionManager.Instance.AddTension(15f);
+                    playerAudioManager.AudioEpee_Out();
+                    playerAudioManager.AudioAttaque1_Woosh();
+					playerAudioManager.AudioVoixAttaque();
                     break;
                 }
             case FighterState.Attack:
@@ -159,13 +169,15 @@ public class Fighter : MonoBehaviour
                 }
             case FighterState.AttackLag:
                 {
-					currentHitbox.SetAttacking(false);
+                   //playerAudioManager.AudioEpee_in();
+                    currentHitbox.SetAttacking(false);
 					break;
                 }
             case FighterState.Death:
                 {
-                   // Destroy(gameObject);
-                    break;
+					playerAudioManager.AudioVoixMort();
+					// Destroy(gameObject);
+					break;
                 }
         }
 		if(nextState != state)
@@ -260,6 +272,10 @@ public class Fighter : MonoBehaviour
         Vector2 movement = dir * speed;
         Movement(movement);
         animator.SetFloat("Speed",movement.magnitude);
+		if (!moved)
+		{
+			playerAudioManager.AudioRespiration(true);
+		}
         moved = true;
         return true;
     }
@@ -326,6 +342,7 @@ public class Fighter : MonoBehaviour
             animator.SetTrigger("Death");
             ImpulseOppositToOpponent(20f);
             Gamefeel.Instance.InitScreenshake(0.3f, 0.8f);
+            Gamefeel.Instance.InitFreezeFrame(0.3f, 0.003f);
             return;
         }
         else
@@ -333,6 +350,7 @@ public class Fighter : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         ImpulseOppositToOpponent(15f);
+        Gamefeel.Instance.InitFreezeFrame(0.1f, 0.002f);
         Gamefeel.Instance.InitScreenshake(0.2f, 0.4f);
     }
 
@@ -352,6 +370,8 @@ public class Fighter : MonoBehaviour
     {
         ImpulseOppositToOpponent(7f);
         fxManager.ParryFX();
+        playerAudioManager.AudioBlockArmes();
+		playerAudioManager.AudioVoixDefense();
         Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
     }
 
@@ -373,6 +393,7 @@ public class Fighter : MonoBehaviour
 			currentHitbox.SetAttacking(false);
             ImpulseOppositToOpponent(4f);
             TensionManager.Instance.AddTension(50f);
+            playerAudioManager.AudioHitBody();
         }
     }
 
@@ -396,4 +417,11 @@ public class Fighter : MonoBehaviour
             }
 		}
 	}
+
+
+    public int getHp()
+    {
+        return hp;
+    }
+
 }
