@@ -30,23 +30,26 @@ public class EventManager : MonoBehaviour
         counter += Time.deltaTime;
         if (counter > carSpawnCooldown)
         {
+            
             counter = 0f;
-            if (Random.value > 0.5f)
+            if (Random.value > 0.66f)
             {
-				
 				Car.SpawnCar();
                 if(Random.value > 0.5f)
                 {
                     StartCoroutine("SpawnCarAfterABit");
                 }
             }
-            else
+            else if(Random.value > 0.5f)
             {
                 Lightning.SpawnLightning();
                 StartCoroutine("SpawnLightningAfterABit");
             }
+            else
+            {
+                TVFlicker.instance.Trigger();
+            }
         }
-		//to do : TVFlicker.instance.Trigger();
 
 	}
 

@@ -17,10 +17,10 @@ public class Human : Control
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        playerInput.currentActionMap["Dash"].performed += ctx => fighter.DashButton();
-        playerInput.currentActionMap["Attack"].performed += ctx => fighter.AttackButton();
         playerInput.currentActionMap["Move"].performed += ctx => lstickBuffer = ctx.ReadValue<Vector2>();
         playerInput.currentActionMap["Move"].canceled += ctx => lstickBuffer = Vector2.zero;
+        playerInput.currentActionMap["Dash"].performed += ctx => fighter.DashButton();
+        playerInput.currentActionMap["Attack"].performed += ctx => fighter.AttackButton();
     }
 
     // Update is called once per frame

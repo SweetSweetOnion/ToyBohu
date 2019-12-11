@@ -286,7 +286,7 @@ public class Fighter : MonoBehaviour
         {
             return false;
         }
-        if (state == FighterState.Idle && Time.time > lastDash + dashCooldown)
+        if (state == FighterState.Idle && Time.time > lastDash + dashCooldown && animator.GetFloat("Speed") > 0.0f)
         {
             ChangeState(FighterState.Dash);
             return true;
