@@ -17,18 +17,19 @@ public class FXManager : MonoBehaviour
 	{
 		if (!hitConfirm) return;
 		hitConfirm.transform.position = transform.position;
-		hitConfirm.SendEvent("OnPlay");
+		hitConfirm.SendEvent("OnTrigger");
 	}
 
 	public void ParryFX()
 	{
 		if (!parry) return;
 		parry.transform.position = transform.position;
-		parry.SendEvent("OnPlay");
+		parry.SendEvent("OnTrigger");
 	}
 
 	public void DashFx()
 	{
 		if (!dash) return;
+		dash.SendEvent("OnTrigger");
 	}
 }
