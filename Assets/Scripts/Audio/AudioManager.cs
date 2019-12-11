@@ -28,7 +28,12 @@ public class AudioManager : MonoBehaviour
 		musicInstance.start();
     }
 
-	public void Tutoriel()
+    private void OnDestroy()
+    {
+        musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void Tutoriel()
 	{
 		musicInstance.setParameterByName("To Début Combat", 0);
 		musicInstance.setParameterByName("To Tutoriel", 0);
