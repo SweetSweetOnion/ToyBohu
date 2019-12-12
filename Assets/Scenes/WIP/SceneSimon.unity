@@ -2316,12 +2316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3fe8198c8f458478175acd204d96a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSprite:
-  - {fileID: 21300000, guid: 714e008a14d035c41af051ec8a4834b6, type: 3}
-  - {fileID: 21300000, guid: a2a1ba9d43f43154ab637b7cd516c3b6, type: 3}
-  - {fileID: 21300000, guid: 29721cc706bf3f241af3cc3f309a6e43, type: 3}
-  - {fileID: 21300000, guid: 11207d091c91e764ca866b39e6bb92ff, type: 3}
-  lifeUI: {fileID: 768854492}
   fighter: {fileID: 3052266021494430826}
 --- !u!114 &768854492
 MonoBehaviour:
@@ -2558,16 +2552,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1773eb2ad6569fb48b5a53d44f9656b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LooseEvent: 
-  Toy_bohuEvent: 
-  PurpleEvent: 
-  PurpleWinsEvent: 
-  Round1Event: 
-  Round2Event: 
-  Round3Event: 
-  WinEvent: 
-  YellowEvent: 
-  YellowWinsEvent: 
+  LooseEvent: event:/UI/Loose
+  Toy_bohuEvent: event:/UI/Menu Toy-bohu
+  PurpleEvent: event:/UI/Purple
+  PurpleWinsEvent: event:/UI/Purple wins
+  Round1Event: event:/UI/Round1
+  Round2Event: event:/UI/Round2
+  Round3Event: event:/UI/Round3
+  WinEvent: event:/UI/Win
+  YellowEvent: event:/UI/Yellow
+  YellowWinsEvent: event:/UI/Yellow wins
 --- !u!1 &879427110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,12 +3576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3fe8198c8f458478175acd204d96a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSprite:
-  - {fileID: 21300000, guid: 714e008a14d035c41af051ec8a4834b6, type: 3}
-  - {fileID: 21300000, guid: a2a1ba9d43f43154ab637b7cd516c3b6, type: 3}
-  - {fileID: 21300000, guid: 29721cc706bf3f241af3cc3f309a6e43, type: 3}
-  - {fileID: 21300000, guid: 11207d091c91e764ca866b39e6bb92ff, type: 3}
-  lifeUI: {fileID: 1064256209}
   fighter: {fileID: 8748314352549877850}
 --- !u!114 &1064256209
 MonoBehaviour:
@@ -4563,7 +4551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningAudio: event:/Environnement/Tonerre
-  tvAudio: "event:/Environnement/T\xE9l\xE9 on"
+  tvAudio: "event:/Environnement/T\xE9l\xE9 glitch"
   carAudio: event:/Environnement/Voiture passage L to R
 --- !u!96 &1370432498 stripped
 TrailRenderer:
