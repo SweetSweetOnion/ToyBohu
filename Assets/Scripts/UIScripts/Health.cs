@@ -5,28 +5,20 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Fighter fighter;
+    [SerializeField] private int fighter;
+    [SerializeField] private GameObject[] hpBar;
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(fighter.getHp() == 2)
+        for(int i = 0; i < 3; ++i)
         {
-            .FULL.GetComponent<Canvas>().enabled = false;
-            P1.MID.GetComponent<Canvas>().enabled = true;
+            hpBar[i].SetActive(false);
         }
-
-        else if (fighter.getHp() == 1)
+        int hp = GameManager.Instance.GetHP(fighter);
+        if (hp > 0)
         {
-            P1.MID.GetComponent<Canvas>().enabled = false;
-            P1.LOW.GetComponent<Canvas>().enabled = true;
+            hpBar[hp - 1].SetActive(true);
         }
-
-        if (fighter.getHp() == 0)
-        {
-            P1.LOW.GetComponent<Canvas>().enabled = false;
-        }*/
-
     }
 }

@@ -92,7 +92,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator DelayBeforeNewRound()
     {
 		state = GameState.RoundEnd;
+        roomLight.SetActive(true);
         yield return new WaitForSeconds(endRoundDelay);
+        roomLight.SetActive(false);
         InitRound();
     }
 
@@ -109,8 +111,8 @@ public class GameManager : MonoBehaviour
 
     private void InitRound()
     {
-		UpdateAudio();
-		++currentRound;
+        ++currentRound;
+        UpdateAudio();
         state = GameState.RoundStart;
         for (int i = 0; i < 2; ++i)
         {
@@ -182,7 +184,12 @@ public class GameManager : MonoBehaviour
 
 	public int GetRoundId()
 	{
-		return victory[0] + victory[1];
+		return currentRound;
 	}
+
+    public int GetHP(int fighter)
+    {
+        return fighters[fighter].getHp();
+    }
 
 }
