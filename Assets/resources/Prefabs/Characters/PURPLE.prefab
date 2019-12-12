@@ -2779,7 +2779,7 @@ GameObject:
   - component: {fileID: 4669683191132232630}
   - component: {fileID: 4669683191132232629}
   m_Layer: 0
-  m_Name: Fighter3Prefab 1
+  m_Name: PURPLE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
