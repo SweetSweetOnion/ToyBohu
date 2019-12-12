@@ -817,6 +817,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
   - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
   RoundUI: {fileID: 162656659}
+  indexPlayer: 0
 --- !u!114 &162656659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4067,6 +4068,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
   - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
   RoundUI: {fileID: 1442616486}
+  indexPlayer: 0
 --- !u!114 &1442616486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4435,13 +4437,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c64a21610df94ba5a28414009205f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beginRoundDelay: 3
+  beginRoundIsLit: 1
+  endRoundDelay: 2
   audioManager: {fileID: 107005888}
-  prefabs:
-  - {fileID: 3052266021494430836}
-  - {fileID: 8748314352549877828}
   fighters:
   - {fileID: 3052266021494430826}
   - {fileID: 8748314352549877850}
+  roomLight: {fileID: 277317388}
+  roundTexts:
+  - {fileID: 1442616483}
+  - {fileID: 162656656}
 --- !u!4 &1543081398
 Transform:
   m_ObjectHideFlags: 0
@@ -5676,6 +5682,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3024092330322805246, guid: 1d77df6d9ec713040b59ecff9351c0b4,
+        type: 3}
+      propertyPath: controller
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3024092330322805247, guid: 1d77df6d9ec713040b59ecff9351c0b4,
         type: 3}
       propertyPath: opponent
@@ -5897,18 +5908,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 264701058707905941}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052266021494430836}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9746cd35af1711a48b1d6abc093ec388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3052266021494430836 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3024092330322805217, guid: 1d77df6d9ec713040b59ecff9351c0b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 264701058707905941}
-  m_PrefabAsset: {fileID: 0}
 --- !u!33 &3054486554355170191
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6033,19 +6038,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &8748314352549877828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7680290863925419687, guid: d19da320cce575a458aa2b5362176a28,
-    type: 3}
-  m_PrefabInstance: {fileID: 1440481543148275427}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8748314352549877850 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
     type: 3}
   m_PrefabInstance: {fileID: 1440481543148275427}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8748314352549877828}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9746cd35af1711a48b1d6abc093ec388, type: 3}
