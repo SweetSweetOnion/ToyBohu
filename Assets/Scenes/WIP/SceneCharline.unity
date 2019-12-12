@@ -1223,7 +1223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 61.687004, y: -113.129005, z: 34.508003}
 --- !u!1001 &691434956
 PrefabInstance:
@@ -1550,7 +1550,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1030802821
 PrefabInstance:
@@ -2346,6 +2346,75 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5ee92474b8b0eb64d9098cc8d37ac580, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1b27294603533d49932509a1040961c, type: 3}
+--- !u!1001 &1494220623
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5000105
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.4272437
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 9480b3fd755f39441a4f2d6363556270,
+        type: 3}
+      propertyPath: m_Name
+      value: Alice in Wonderland Book
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9480b3fd755f39441a4f2d6363556270, type: 3}
 --- !u!1001 &1562024114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2569,7 +2638,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e4ac75290436c6942ad9b75c26ef0493,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e4ac75290436c6942ad9b75c26ef0493,
         type: 3}
@@ -2845,7 +2914,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1910674555
 PrefabInstance:
@@ -3485,5 +3554,5 @@ Transform:
   - {fileID: 2114493595697910945}
   - {fileID: 1922523980885198575}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
