@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int[] victory = new int[2];
     [Header("Parameters")]
     [SerializeField] private float beginRoundDelay = 3;
     [SerializeField] private bool beginRoundIsLit = true;
@@ -36,10 +35,14 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private AudioManager audioManager;
     [SerializeField] private Fighter[] fighters;
     [SerializeField] private GameObject roomLight;
+    [SerializeField] private GameObject[] roundTexts;
+
     private Vector3[] startingPositions = new Vector3[2];
     private PlayerInputManager playerInputManager;
     private GameState state = GameState.GameStart;
 
+    private int[] victory = new int[2];
+    private int currentRound;
 
 
     private void Start()
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
         {
             startingPositions[i] = fighters[i].transform.position;
         }
+        currentRound = -1;
 		InitRound();
     }
 
@@ -80,15 +84,18 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator DelayBeforeFight()
     {
+        roundTexts[currentRound].SetActive(true);
         state = GameState.RoundStart;
         roomLight.SetActive(beginRoundIsLit);
         yield return new WaitForSeconds(beginRoundDelay);
         roomLight.SetActive(false);
+        roundTexts[currentRound].SetActive(false);
         state = GameState.Fight;
     }
 
     private void InitRound()
     {
+        ++currentRound;
         state = GameState.RoundStart;
         for (int i = 0; i < 2; ++i)
         {
