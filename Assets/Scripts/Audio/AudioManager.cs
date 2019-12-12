@@ -20,14 +20,86 @@ public class AudioManager : MonoBehaviour
 	public string musicEvent;
 
 	private FMOD.Studio.EventInstance musicInstance;
-	
 
-    private void Start()
-    {
+	[FMODUnity.EventRef]
+	public string LooseEvent;
+	[FMODUnity.EventRef]
+	public string Toy_bohuEvent;
+	[FMODUnity.EventRef]
+	public string PurpleEvent;
+	[FMODUnity.EventRef]
+	public string PurpleWinsEvent;
+	[FMODUnity.EventRef]
+	public string Round1Event;
+	[FMODUnity.EventRef]
+	public string Round2Event;
+	[FMODUnity.EventRef]
+	public string Round3Event;
+	[FMODUnity.EventRef]
+	public string WinEvent;
+	[FMODUnity.EventRef]
+	public string YellowEvent;
+	[FMODUnity.EventRef]
+	public string YellowWinsEvent;
+
+	private void Start()
+	{
 		musicInstance = RuntimeManager.CreateInstance(musicEvent);
-        musicInstance.start();
-        RuntimeManager.PlayOneShot(Ambiance_ExterieurEvent);
-    }
+		musicInstance.start();
+		RuntimeManager.PlayOneShot(Ambiance_ExterieurEvent);
+	}
+
+	public void LooseAudio()
+	{
+		RuntimeManager.PlayOneShot(LooseEvent);
+	}
+
+	public void Toy_bohuAudio()
+	{
+		RuntimeManager.PlayOneShot(Toy_bohuEvent);
+	}
+
+	public void PurpleAudio()
+	{
+		RuntimeManager.PlayOneShot(PurpleEvent);
+	}
+
+	public void PurpleWinsAudio()
+	{
+		RuntimeManager.PlayOneShot(PurpleWinsEvent);
+	}
+
+	public void Round1VoixAudio()
+	{
+		RuntimeManager.PlayOneShot(Round1Event);
+	}
+
+	public void Round2VoixAudio()
+	{
+		RuntimeManager.PlayOneShot(Round2Event);
+	}
+
+	public void Round3VoixAudio()
+	{
+		RuntimeManager.PlayOneShot(Round3Event);
+	}
+	public void WinAudio()
+	{
+		RuntimeManager.PlayOneShot(WinEvent);
+	}
+
+	public void YellowAudio()
+	{
+		RuntimeManager.PlayOneShot(YellowEvent);
+	}
+
+	public void YellowWinsAudio()
+	{
+		RuntimeManager.PlayOneShot(YellowWinsEvent);
+	}
+
+
+	
 
     private void OnDestroy()
     {

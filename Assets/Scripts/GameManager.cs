@@ -85,12 +85,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(tutoDelay);
         tuto.SetActive(false);
         roomLight.SetActive(false);
-        InitRound();
+		
+		InitRound();
     }
 
     private IEnumerator DelayBeforeNewRound()
     {
-        state = GameState.RoundEnd;
+		state = GameState.RoundEnd;
         yield return new WaitForSeconds(endRoundDelay);
         InitRound();
     }
@@ -108,7 +109,8 @@ public class GameManager : MonoBehaviour
 
     private void InitRound()
     {
-        ++currentRound;
+		UpdateAudio();
+		++currentRound;
         state = GameState.RoundStart;
         for (int i = 0; i < 2; ++i)
         {
@@ -116,7 +118,7 @@ public class GameManager : MonoBehaviour
             fighters[i].Initialize();
             fighters[i].SetOpponent(fighters[(i + 1) % 2]);
         }
-		UpdateAudio();
+		
 		StartCoroutine("DelayBeforeFight");
     }
 
@@ -126,12 +128,15 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 audioManager.Round1Audio();
+				audioManager.Round1VoixAudio();
                 break;
             case 1:
                 audioManager.Round2Audio();
+				audioManager.Round2VoixAudio();
                 break;
             case 2:
                 audioManager.Round3Audio();
+				audioManager.Round3VoixAudio();
                 break;
         }
     }
