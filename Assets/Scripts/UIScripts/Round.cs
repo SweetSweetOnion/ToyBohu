@@ -9,10 +9,12 @@ public class Round : MonoBehaviour
 
     public Image RoundUI;
 
+    public int indexPlayer;
+
 
     // Update is called once per frame
     void Update()
     {
-        RoundUI.sprite = RoundSprite[GameManager.Instance.GetVictory(0)];
+        RoundUI.sprite = RoundSprite[GameManager.Instance.GetVictory(indexPlayer)];
     }
 }
