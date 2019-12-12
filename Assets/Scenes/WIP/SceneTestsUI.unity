@@ -811,6 +811,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
   - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
   RoundUI: {fileID: 162656659}
+  indexPlayer: 0
 --- !u!114 &162656659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,7 +957,7 @@ GameObject:
   - component: {fileID: 277317390}
   - component: {fileID: 277317389}
   m_Layer: 0
-  m_Name: Room Light
+  m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,7 +1074,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 0.39906386, g: 0.3936009, b: 0.5754717, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2048
   m_Range: 2707
   m_SpotAngle: 30
@@ -1117,7 +1118,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
-  m_ColorTemperature: 20000
+  m_ColorTemperature: 5308
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -3022,7 +3023,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 29721cc706bf3f241af3cc3f309a6e43, type: 3}
   - {fileID: 21300000, guid: 11207d091c91e764ca866b39e6bb92ff, type: 3}
   lifeUI: {fileID: 973458673}
-  fighter: {fileID: 3052266021494430826}
+  fighter: {fileID: 8748314352549877850}
 --- !u!114 &973458673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3320,7 +3321,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 29721cc706bf3f241af3cc3f309a6e43, type: 3}
   - {fileID: 21300000, guid: 11207d091c91e764ca866b39e6bb92ff, type: 3}
   lifeUI: {fileID: 1102966067}
-  fighter: {fileID: 8748314352549877850}
+  fighter: {fileID: 3052266021494430826}
 --- !u!114 &1102966067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4037,6 +4038,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
   - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
   RoundUI: {fileID: 1442616486}
+  indexPlayer: 1
 --- !u!114 &1442616486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4405,14 +4407,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7c64a21610df94ba5a28414009205f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beginRoundDelay: 3
-  beginRoundIsLit: 1
-  endRoundDelay: 2
   audioManager: {fileID: 107005888}
+  prefabs:
+  - {fileID: 1990265638}
+  - {fileID: 1880298268}
   fighters:
   - {fileID: 3052266021494430826}
   - {fileID: 8748314352549877850}
-  roomLight: {fileID: 277317388}
 --- !u!4 &1543081398
 Transform:
   m_ObjectHideFlags: 0
@@ -5064,6 +5065,12 @@ Transform:
   m_Father: {fileID: 78336221}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1880298268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8805504066518781189, guid: 58af3b4bde04a9a46abacfb1db15b81e,
+    type: 3}
+  m_PrefabInstance: {fileID: 241838433305351489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1932586541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5434,6 +5441,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: a1b27294603533d49932509a1040961c,
     type: 3}
   m_PrefabInstance: {fileID: 1950565123}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1990265638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8748314353353105048, guid: 81f24375ff08d0643b0790048a140acd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5995296382535828204}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2052623732
 GameObject:
@@ -5808,7 +5821,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5995296382535828204}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1990265638}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9746cd35af1711a48b1d6abc093ec388, type: 3}
@@ -6136,7 +6149,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 241838433305351489}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1880298268}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9746cd35af1711a48b1d6abc093ec388, type: 3}

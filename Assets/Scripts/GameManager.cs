@@ -28,9 +28,14 @@ public class GameManager : MonoBehaviour
     }
 
     private int[] victory = new int[2];
-	[SerializeField]private AudioManager audioManager;
-    [SerializeField] private GameObject[] prefabs;
+    [Header("Parameters")]
+    [SerializeField] private float beginRoundDelay = 3;
+    [SerializeField] private bool beginRoundIsLit = true;
+    [SerializeField] private float endRoundDelay = 2;
+    [Header("Links")]
+	[SerializeField] private AudioManager audioManager;
     [SerializeField] private Fighter[] fighters;
+    [SerializeField] private GameObject roomLight;
     private Vector3[] startingPositions = new Vector3[2];
     private PlayerInputManager playerInputManager;
     private GameState state = GameState.GameStart;
@@ -50,7 +55,6 @@ public class GameManager : MonoBehaviour
         {
             startingPositions[i] = fighters[i].transform.position;
         }
-
 		InitRound();
     }
 
@@ -70,14 +74,16 @@ public class GameManager : MonoBehaviour
     private IEnumerator DelayBeforeNewRound()
     {
         state = GameState.RoundEnd;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(endRoundDelay);
         InitRound();
     }
 
     private IEnumerator DelayBeforeFight()
     {
         state = GameState.RoundStart;
-        yield return new WaitForSeconds(1);
+        roomLight.SetActive(beginRoundIsLit);
+        yield return new WaitForSeconds(beginRoundDelay);
+        roomLight.SetActive(false);
         state = GameState.Fight;
     }
 
@@ -92,6 +98,22 @@ public class GameManager : MonoBehaviour
         }
 		UpdateAudio();
 		StartCoroutine("DelayBeforeFight");
+    }
+
+    private void UpdateAudio()
+    {
+        switch (GetRoundId())
+        {
+            case 0:
+                audioManager.Round1Audio();
+                break;
+            case 1:
+                audioManager.Round2Audio();
+                break;
+            case 2:
+                audioManager.Round3Audio();
+                break;
+        }
     }
 
     //Public methods;
@@ -127,22 +149,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-	private void UpdateAudio()
-	{
-		switch (GetRoundId())
-		{
-			case 0:
-				audioManager.Round1Audio();
-				break;
-			case 1:
-				audioManager.Round2Audio();
-				break;
-			case 2:
-				audioManager.Round3Audio();
-				break;
-		}
-	}
 
     public int GetVictory(int index)
     {
