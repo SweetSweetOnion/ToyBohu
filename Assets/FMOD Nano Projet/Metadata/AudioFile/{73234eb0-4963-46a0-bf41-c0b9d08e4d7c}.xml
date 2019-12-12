@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{73234eb0-4963-46a0-bf41-c0b9d08e4d7c}">
+		<property name="assetPath">
+			<value>2-71 Thunder_Huge Clap, With Long Tail And Rain-01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>11.221333333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{16ea86b1-db75-46f2-b94f-b98a88695656}</destination>
+		</relationship>
+	</object>
+</objects>

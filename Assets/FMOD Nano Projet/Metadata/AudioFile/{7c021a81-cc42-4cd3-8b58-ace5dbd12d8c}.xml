@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{7c021a81-cc42-4cd3-8b58-ace5dbd12d8c}">
+		<property name="assetPath">
+			<value>Voix de mort_ valentin-cm_05-01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.5840000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{16ea86b1-db75-46f2-b94f-b98a88695656}</destination>
+		</relationship>
+	</object>
+</objects>

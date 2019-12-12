@@ -5,17 +5,28 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Sprite[] lifeSprite;
-
-    public Image lifeUI;
-
     public Fighter fighter;
-
 
     // Update is called once per frame
     void Update()
     {
-        lifeUI.sprite = lifeSprite[fighter.getHp()];
+        /*
+        if(fighter.getHp() == 2)
+        {
+            .FULL.GetComponent<Canvas>().enabled = false;
+            P1.MID.GetComponent<Canvas>().enabled = true;
+        }
+
+        else if (fighter.getHp() == 1)
+        {
+            P1.MID.GetComponent<Canvas>().enabled = false;
+            P1.LOW.GetComponent<Canvas>().enabled = true;
+        }
+
+        if (fighter.getHp() == 0)
+        {
+            P1.LOW.GetComponent<Canvas>().enabled = false;
+        }*/
 
     }
 }

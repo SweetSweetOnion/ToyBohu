@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{fb0bdf16-83d6-46d6-8303-f0d6bc833962}">
+		<property name="assetPath">
+			<value>Ftsps parquet5-cm-01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.23066666666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{16ea86b1-db75-46f2-b94f-b98a88695656}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{8455448a-b757-43c0-9f21-eaca5a798048}">
+		<property name="assetPath">
+			<value>sword_normal_out_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.3902721088435375</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{16ea86b1-db75-46f2-b94f-b98a88695656}</destination>
+		</relationship>
+	</object>
+</objects>
