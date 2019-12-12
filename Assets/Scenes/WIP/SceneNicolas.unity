@@ -4822,11 +4822,10 @@ MonoBehaviour:
   fighters:
   - {fileID: 3052266021494430826}
   - {fileID: 8748314352549877850}
-  roomLight: {fileID: 1083624510}
+  roomLight: {fileID: 277317388}
   roundTexts:
-  - {fileID: 885146136}
-  - {fileID: 1636503960}
-  - {fileID: 595912473}
+  - {fileID: 1442616483}
+  - {fileID: 162656656}
 --- !u!4 &1543081398
 Transform:
   m_ObjectHideFlags: 0
@@ -5939,6 +5938,11 @@ PrefabInstance:
     - target: {fileID: 3024092330322805243, guid: 1d77df6d9ec713040b59ecff9351c0b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024092330322805246, guid: 1d77df6d9ec713040b59ecff9351c0b4,
+        type: 3}
+      propertyPath: controller
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3024092330322805247, guid: 1d77df6d9ec713040b59ecff9351c0b4,
