@@ -28,14 +28,16 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("Parameters")]
-    [SerializeField] private float beginRoundDelay = 3;
+    [SerializeField] private float beginRoundDelay = 3f;
     [SerializeField] private bool beginRoundIsLit = true;
-    [SerializeField] private float endRoundDelay = 2;
+    [SerializeField] private float endRoundDelay = 2f;
+    [SerializeField] private float tutoDelay = 20f;
     [Header("Links")]
 	[SerializeField] private AudioManager audioManager;
     [SerializeField] private Fighter[] fighters;
     [SerializeField] private GameObject roomLight;
     [SerializeField] private GameObject[] roundTexts;
+    [SerializeField] private GameObject tuto;
 
     private Vector3[] startingPositions = new Vector3[2];
     private PlayerInputManager playerInputManager;
@@ -59,7 +61,8 @@ public class GameManager : MonoBehaviour
             startingPositions[i] = fighters[i].transform.position;
         }
         currentRound = -1;
-		InitRound();
+        state = GameState.Tuto;
+        StartCoroutine("DelayDuringTuto");
     }
 
     private void Update()
@@ -73,6 +76,16 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    private IEnumerator DelayDuringTuto()
+    {
+        roomLight.SetActive(true);
+        tuto.SetActive(true);
+        yield return new WaitForSeconds(tutoDelay);
+        tuto.SetActive(false);
+        roomLight.SetActive(false);
+        InitRound();
     }
 
     private IEnumerator DelayBeforeNewRound()
@@ -127,7 +140,7 @@ public class GameManager : MonoBehaviour
 
     public bool PlayerCanInteract()
     {
-        return state == GameState.Fight || state == GameState.RoundEnd;
+        return state == GameState.Fight || state == GameState.RoundEnd || state == GameState.Tuto;
     }
 
     public IEnumerator Restart()
