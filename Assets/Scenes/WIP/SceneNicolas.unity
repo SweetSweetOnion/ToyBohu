@@ -478,9 +478,6 @@ MonoBehaviour:
   Toy_bohuEvent: event:/UI/Menu Toy-bohu
   PurpleEvent: event:/UI/Purple
   PurpleWinsEvent: event:/UI/Purple wins
-  Round1Event: event:/UI/Round1
-  Round2Event: event:/UI/Round2
-  Round3Event: event:/UI/Round3
   WinEvent: event:/UI/Win
   YellowEvent: event:/UI/Yellow
   YellowWinsEvent: event:/UI/Yellow wins
@@ -3463,13 +3460,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083624510}
-  m_LocalRotation: {x: 0.70780706, y: -0.086042136, z: 0.19729957, w: 0.6728142}
+  m_LocalRotation: {x: 0.5929444, y: -0.053877365, z: 0.20839259, w: 0.77594244}
   m_LocalPosition: {x: -3.5833335, y: 14.081901, z: 0.7567954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 606536370}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 80.539, y: 95.86201, z: 119.05701}
+  m_LocalEulerAnglesHint: {x: 70.499, y: 29.330002, z: 51.022003}
 --- !u!114 &1083624512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3584,7 +3581,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 4096
   m_Range: 2707
-  m_SpotAngle: 129.2
+  m_SpotAngle: 43.2
   m_InnerSpotAngle: 9.9
   m_CookieSize: 10
   m_Shadows:
@@ -3613,7 +3610,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: a08dcb4fe270e884dac2151d54abf47f, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -5163,36 +5160,6 @@ Transform:
   - {fileID: 1323779208}
   m_Father: {fileID: 0}
   m_RootOrder: 28
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1729659370
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1729659372}
-  m_Layer: 0
-  m_Name: AudioSetting
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1729659372
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729659370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.77, z: -2.18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1847340766
 GameObject:

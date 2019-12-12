@@ -29,12 +29,12 @@ public class AudioManager : MonoBehaviour
 	public string PurpleEvent;
 	[FMODUnity.EventRef]
 	public string PurpleWinsEvent;
-	[FMODUnity.EventRef]
+	/*[FMODUnity.EventRef]
 	public string Round1Event;
 	[FMODUnity.EventRef]
 	public string Round2Event;
 	[FMODUnity.EventRef]
-	public string Round3Event;
+	public string Round3Event;*/
 	[FMODUnity.EventRef]
 	public string WinEvent;
 	[FMODUnity.EventRef]
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
 		RuntimeManager.PlayOneShot(PurpleWinsEvent);
 	}
 
-	public void Round1VoixAudio()
+	/*public void Round1VoixAudio()
 	{
 		RuntimeManager.PlayOneShot(Round1Event);
 	}
@@ -82,7 +82,7 @@ public class AudioManager : MonoBehaviour
 	public void Round3VoixAudio()
 	{
 		RuntimeManager.PlayOneShot(Round3Event);
-	}
+	}*/
 	public void WinAudio()
 	{
 		RuntimeManager.PlayOneShot(WinEvent);
@@ -108,21 +108,22 @@ public class AudioManager : MonoBehaviour
 
     public void Tutoriel()
 	{
-		musicInstance.setParameterByName("To Début Combat", 0);
+		musicInstance.setParameterByName("Rounds", 0);
 		musicInstance.setParameterByName("To Tutoriel", 0);
 	}
 
-	public void InitRound1()
+	/*public void InitRound1()
 	{
-		musicInstance.setParameterByName("To Début Combat", 1);
-	}
+		Debug.Log("yooo");
+		var t =  musicInstance.setParameterByName("Rounds", 1);
+		Debug.Log(t.ToString());
+	}*/
 
 	public void Round1Audio()
     {
         RuntimeManager.PlayOneShot(Ambiance_BaseEvent);
-		musicInstance.setParameterByName("To Début Combat", 1);
+		musicInstance.setParameterByName("Rounds", 1);
 		musicInstance.setParameterByName("To Tutoriel", 0);
-		musicInstance.setParameterByName("Rounds", 0);
 	}
 
     public void Round2Audio()

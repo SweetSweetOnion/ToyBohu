@@ -128,15 +128,15 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 audioManager.Round1Audio();
-				audioManager.Round1VoixAudio();
+			//	audioManager.Round1VoixAudio();
                 break;
             case 1:
                 audioManager.Round2Audio();
-				audioManager.Round2VoixAudio();
+			//	audioManager.Round2VoixAudio();
                 break;
             case 2:
                 audioManager.Round3Audio();
-				audioManager.Round3VoixAudio();
+			//	audioManager.Round3VoixAudio();
                 break;
         }
     }
