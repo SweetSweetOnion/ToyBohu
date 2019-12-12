@@ -182,6 +182,10 @@ public class Fighter : MonoBehaviour
         }
 		if(nextState != state)
 		{
+			if(state == FighterState.Dash)
+			{
+				fxManager.EndDashFx();
+			}
 			state = nextState;
         }
         attackBuffer = false;

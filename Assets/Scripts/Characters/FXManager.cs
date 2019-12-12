@@ -11,6 +11,8 @@ public class FXManager : MonoBehaviour
 	private VisualEffect parry;
 	[SerializeField]
 	private VisualEffect dash;
+	[SerializeField]
+	private TrailRenderer[] trails;
 
 
 	public void HitFX()
@@ -31,5 +33,20 @@ public class FXManager : MonoBehaviour
 	{
 		if (!dash) return;
 		dash.SendEvent("OnTrigger");
+		SetTrail(true);
 	}
+
+	public void EndDashFx()
+	{
+		SetTrail(false);
+	}
+
+	private void SetTrail(bool active)
+	{
+		
+		foreach(TrailRenderer t in trails)
+		{
+			t.emitting = active;
+		}
+	} 
 }
