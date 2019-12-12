@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.VFX;
@@ -10,17 +11,19 @@ public class StickFX : MonoBehaviour
 	private VisualEffect vfx;
 	[SerializeField]
 	private Light fxLight;
+	[SerializeField]
+	private TrailRenderer[] attackTrails;
 
 	private Fighter fighter;
 
 	
-	public FXState defaultState;
+	/*public FXState defaultState;
 	public FXState setUpAttackState;
 	public FXState blockState;
 	public FXState attackState;
 	public FXState attackLagState;
 
-	private FighterState lastState;
+	private FighterState lastState;*/
 
 	[System.Serializable]
 	public class FXState
@@ -62,34 +65,52 @@ public class StickFX : MonoBehaviour
 
 	private void UpdateFX()
 	{
-		if(fighter.currentState == lastState)
+		/*if(fighter.currentState == lastState)
 		{
 			return;
 		}
-		lastState = fighter.currentState;
+		lastState = fighter.currentState;*/
 
 		switch (fighter.currentState)
 		{
 			case FighterState.SetUpAttack:
-				vfx.SendEvent("OnPlay");
+				vfx.SendEvent("OnTrigger");
 				fxLight.enabled = true;
-				setUpAttackState.Apply(vfx, fxLight);
+				//setUpAttackState.Apply(vfx, fxLight);
+				StartTrails();
 				break;
 			case FighterState.Block:
-				blockState.Apply(vfx, fxLight);
+				//blockState.Apply(vfx, fxLight);
 				break;
 			case FighterState.Attack:
-				attackState.Apply(vfx, fxLight);
+				//attackState.Apply(vfx, fxLight);
 				break;
 			case FighterState.AttackLag:
-				attackLagState.Apply(vfx, fxLight);
+				//attackLagState.Apply(vfx, fxLight);
+				EndTrails();
 				break;
 			default:
 				fxLight.enabled = false;
-				defaultState.Apply(vfx, fxLight);
+				//defaultState.Apply(vfx, fxLight);
 				vfx.SendEvent("OnStop");
 				
 				break;
+		}
+	}
+
+	private void StartTrails()
+	{
+		foreach(TrailRenderer t in attackTrails)
+		{
+			t.emitting = true;
+		}
+	}
+
+	private void EndTrails()
+	{
+		foreach (TrailRenderer t in attackTrails)
+		{
+			t.emitting = false;
 		}
 	}
 }

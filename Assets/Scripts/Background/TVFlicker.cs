@@ -9,7 +9,7 @@ public class TVFlicker : MonoBehaviour
 
 	[SerializeField]private Material tvOn;
 	[SerializeField]private Material tvOff;
-	[SerializeField]private float duration = 1;
+	[SerializeField]private float duration = 0.7f;
 	[SerializeField]private Vector2	minMaxLightIntensity = new Vector2(9,10);
 
 	private Light areaLight;
