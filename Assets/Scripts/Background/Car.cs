@@ -23,20 +23,18 @@ public class Car : MonoBehaviour
         transform.position += new Vector3(Time.deltaTime * speed * -direction,0f,0f);
         if(counter > 1f)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
-    public static void SpawnCar()
+    public void SpawnCar()
     {
-		
-        float direction = 1f;
+        counter = 0.0f;
+        direction = 1f;
         if (Random.value >= 0.5f)
         {
             direction = -1f;
         }
-        carPrefab = (GameObject)Resources.Load("Prefabs/Environment/Car", typeof(GameObject));
-        GameObject o = Object.Instantiate(carPrefab,new Vector3(distance * direction,0f,0f), new Quaternion());
-        o.GetComponent<Car>().direction = direction;
+        transform.position = new Vector3(distance * direction, 0f, 0f);
     }
 }
