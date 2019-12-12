@@ -25,7 +25,8 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
 		musicInstance = RuntimeManager.CreateInstance(musicEvent);
-		musicInstance.start();
+        musicInstance.start();
+        RuntimeManager.PlayOneShot(Ambiance_ExterieurEvent);
     }
 
     private void OnDestroy()

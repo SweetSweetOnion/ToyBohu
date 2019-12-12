@@ -38,9 +38,9 @@ public class PlayerAudioManager : MonoBehaviour
 
 	private void Start()
 	{
-		footInstance = RuntimeManager.CreateInstance(footstepsEvent);
+		//footInstance = RuntimeManager.CreateInstance(footstepsEvent);
 		//footInstance.start();
-		respiration = RuntimeManager.CreateInstance(respirationFighterEvent);
+		//respiration = RuntimeManager.CreateInstance(respirationFighterEvent);
 	}
 
 
@@ -76,10 +76,10 @@ public class PlayerAudioManager : MonoBehaviour
 	
     public void AudioFootsteps(int audioMaterial)
     {
-		footInstance = RuntimeManager.CreateInstance(footstepsEvent);
+		/*footInstance = RuntimeManager.CreateInstance(footstepsEvent);
 		footInstance.setParameterByName("Tapis", audioMaterial);
 		RuntimeManager.AttachInstanceToGameObject(footInstance, transform, null as Rigidbody);
-		footInstance.start();
+		footInstance.start();*/
 		//RuntimeManager.PlayOneShot(footstepsEvent);
     }
 

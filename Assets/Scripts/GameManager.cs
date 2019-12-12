@@ -27,14 +27,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int[] victory = new int[2];
-	[SerializeField]private AudioManager audioManager;
-    [SerializeField] private GameObject[] prefabs;
+    [Header("Parameters")]
+    [SerializeField] private float beginRoundDelay = 3f;
+    [SerializeField] private bool beginRoundIsLit = true;
+    [SerializeField] private float endRoundDelay = 2f;
+    [SerializeField] private float tutoDelay = 20f;
+    [Header("Links")]
+	[SerializeField] private AudioManager audioManager;
     [SerializeField] private Fighter[] fighters;
+    [SerializeField] private GameObject roomLight;
+    [SerializeField] private GameObject[] roundTexts;
+    [SerializeField] private GameObject tuto;
+
     private Vector3[] startingPositions = new Vector3[2];
     private PlayerInputManager playerInputManager;
     private GameState state = GameState.GameStart;
 
+    private int[] victory = new int[2];
+    private int currentRound;
 
 
     private void Start()
@@ -50,8 +60,9 @@ public class GameManager : MonoBehaviour
         {
             startingPositions[i] = fighters[i].transform.position;
         }
-
-		InitRound();
+        currentRound = -1;
+        state = GameState.Tuto;
+        StartCoroutine("DelayDuringTuto");
     }
 
     private void Update()
@@ -67,22 +78,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator DelayDuringTuto()
+    {
+        roomLight.SetActive(true);
+        tuto.SetActive(true);
+        yield return new WaitForSeconds(tutoDelay);
+        tuto.SetActive(false);
+        roomLight.SetActive(false);
+        InitRound();
+    }
+
     private IEnumerator DelayBeforeNewRound()
     {
         state = GameState.RoundEnd;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(endRoundDelay);
         InitRound();
     }
 
     private IEnumerator DelayBeforeFight()
     {
+        roundTexts[currentRound].SetActive(true);
         state = GameState.RoundStart;
-        yield return new WaitForSeconds(1);
+        roomLight.SetActive(beginRoundIsLit);
+        yield return new WaitForSeconds(beginRoundDelay);
+        roomLight.SetActive(false);
+        roundTexts[currentRound].SetActive(false);
         state = GameState.Fight;
     }
 
     private void InitRound()
     {
+        ++currentRound;
         state = GameState.RoundStart;
         for (int i = 0; i < 2; ++i)
         {
@@ -94,11 +120,27 @@ public class GameManager : MonoBehaviour
 		StartCoroutine("DelayBeforeFight");
     }
 
+    private void UpdateAudio()
+    {
+        switch (GetRoundId())
+        {
+            case 0:
+                audioManager.Round1Audio();
+                break;
+            case 1:
+                audioManager.Round2Audio();
+                break;
+            case 2:
+                audioManager.Round3Audio();
+                break;
+        }
+    }
+
     //Public methods;
 
     public bool PlayerCanInteract()
     {
-        return state == GameState.Fight || state == GameState.RoundEnd;
+        return state == GameState.Fight || state == GameState.RoundEnd || state == GameState.Tuto;
     }
 
     public IEnumerator Restart()
@@ -127,22 +169,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-	private void UpdateAudio()
-	{
-		switch (GetRoundId())
-		{
-			case 0:
-				audioManager.Round1Audio();
-				break;
-			case 1:
-				audioManager.Round2Audio();
-				break;
-			case 2:
-				audioManager.Round3Audio();
-				break;
-		}
-	}
 
     public int GetVictory(int index)
     {
