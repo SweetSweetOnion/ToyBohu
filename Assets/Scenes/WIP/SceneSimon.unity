@@ -3773,7 +3773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningAudio: event:/Environnement/Tonerre
-  tvAudio: "event:/Environnement/T\xE9l\xE9 on"
+  tvAudio: "event:/Environnement/T\xE9l\xE9 glitch"
   carAudio: event:/Environnement/Voiture passage L to R
 --- !u!96 &1370432498 stripped
 TrailRenderer:
