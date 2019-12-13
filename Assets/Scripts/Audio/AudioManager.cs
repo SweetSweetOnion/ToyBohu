@@ -115,12 +115,13 @@ public class AudioManager : MonoBehaviour
 
 	public void EndMatch()
 	{
+		//musicInstance.setParameterByName("The Last PV",0);
 		musicInstance.setParameterByName("To Fin du Combat", 1);
 	}
 
 	public void lastPV(bool b)
 	{
-		musicInstance.setParameterByName("The Last PV",b?1:0);
+		//musicInstance.setParameterByName("The Last PV",b?1:0);
 	}
 
 	/*public void InitRound1()
