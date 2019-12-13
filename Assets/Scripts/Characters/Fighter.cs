@@ -56,6 +56,7 @@ public class Fighter : MonoBehaviour
         state = FighterState.Idle;
         impact.ResetImpact();
         animator.SetTrigger("Initialize");
+        animator.SetFloat("Speed", 0f);
         FaceOpponent();
     }
 

@@ -18,8 +18,11 @@ public class AudioManager : MonoBehaviour
 
 	[FMODUnity.EventRef]
 	public string musicEvent;
+    [FMODUnity.EventRef]
+    public string musicMenuEvent;
 
-	private FMOD.Studio.EventInstance musicInstance;
+
+    private FMOD.Studio.EventInstance musicInstance;
 
 	[FMODUnity.EventRef]
 	public string LooseEvent;
@@ -41,12 +44,20 @@ public class AudioManager : MonoBehaviour
 	public string YellowEvent;
 	[FMODUnity.EventRef]
 	public string YellowWinsEvent;
+    [SerializeField] private bool inMenu = false;
 
 	private void Start()
 	{
-		musicInstance = RuntimeManager.CreateInstance(musicEvent);
-		musicInstance.start();
-		RuntimeManager.PlayOneShot(Ambiance_ExterieurEvent);
+        if (!inMenu) {
+            musicInstance = RuntimeManager.CreateInstance(musicEvent);
+            musicInstance.start();
+            RuntimeManager.PlayOneShot(Ambiance_ExterieurEvent);
+        }
+        else
+        {
+            musicInstance = RuntimeManager.CreateInstance(musicMenuEvent);
+            musicInstance.start();
+        }
 	}
 
 	public void LooseAudio()

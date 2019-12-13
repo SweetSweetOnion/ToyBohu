@@ -2457,6 +2457,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635430964}
   m_CullTransparentMesh: 0
+--- !u!1 &642262451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642262453}
+  - component: {fileID: 642262452}
+  m_Layer: 0
+  m_Name: Environnement Sound Design
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &642262452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642262451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c9ab57edb1e0045a2e37d07b35de59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ambiance_BaseEvent: "event:/Environnement/Ambiance int\xE9rieur base"
+  Ambiance_Round2Event: "event:/Environnement/Ambiance int\xE9rieur round 2"
+  Ambiance_Round3Event: "event:/Environnement/Ambiance int\xE9rieur round 3"
+  Ambiance_ExterieurEvent: "event:/Environnement/Ambiance ext\xE9rieur"
+  RonflementsEvent: event:/Environnement/Ronflement enfant
+  musicEvent: event:/Musique/Musique Tutoriel_Combat
+  musicMenuEvent: event:/Musique/Musique Menu
+  LooseEvent: 
+  Toy_bohuEvent: 
+  PurpleEvent: 
+  PurpleWinsEvent: event:/UI/Purple wins
+  WinEvent: 
+  YellowEvent: 
+  YellowWinsEvent: event:/UI/Yellow wins
+  inMenu: 1
+--- !u!4 &642262453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642262451}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &691434956
 PrefabInstance:
   m_ObjectHideFlags: 0
