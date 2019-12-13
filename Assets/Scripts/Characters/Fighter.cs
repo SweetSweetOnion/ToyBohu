@@ -26,8 +26,9 @@ public class Fighter : MonoBehaviour
 	private FXManager fxManager;
 	private Dash dash;
     private PlayerAudioManager playerAudioManager;
+	private SkinnedMeshRenderer skinMeshRenderer;
     private bool attackBuffer;
-
+	private Material baseMaterial;
 	//Counters
 	private float counterInState;
 
@@ -38,6 +39,11 @@ public class Fighter : MonoBehaviour
 	[SerializeField]private float blockDuration = 0.2f;
 	[SerializeField]private float attackDuration = 0.2f;
 	[SerializeField]private float attackLagDuration = 0.2f;
+	[SerializeField]
+	private float flashDuration = 1;
+	[SerializeField]
+	private float flashDelay = 0.1f;
+	[SerializeField]private Material flashMaterial;
 	//accessors
 	public FighterState currentState => state;
 	public Vector2 direction => currentDirection;
@@ -74,6 +80,8 @@ public class Fighter : MonoBehaviour
 		fxManager = GetComponent<FXManager>();
 		dash = GetComponent<Dash>();
         playerAudioManager = GetComponentInChildren<PlayerAudioManager>();
+		skinMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+		baseMaterial = skinMeshRenderer.material;
     }
 
 	void Start()
@@ -364,6 +372,7 @@ public class Fighter : MonoBehaviour
         ImpulseOppositToOpponent(15f);
         Gamefeel.Instance.InitFreezeFrame(0.1f, 0.002f);
         Gamefeel.Instance.InitScreenshake(0.2f, 0.4f);
+		StartCoroutine(Flash());
     }
 
     public bool IsDead()
@@ -436,4 +445,25 @@ public class Fighter : MonoBehaviour
         return hp;
     }
 
+	private IEnumerator Flash()
+	{
+		float t = 0;
+		float a = 0;
+		bool b = true;
+		while (t< flashDuration)
+		{
+			t += Time.deltaTime;
+			a += Time.deltaTime;
+			if(a > flashDelay)
+			{
+				skinMeshRenderer.material = b ? flashMaterial : baseMaterial;
+				a = 0;
+				b = !b;
+			}
+			yield return null;
+		}
+		skinMeshRenderer.material = baseMaterial;
+	}
+
 }
+

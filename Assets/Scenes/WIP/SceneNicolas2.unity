@@ -3641,7 +3641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1113926051
 Transform:
   m_ObjectHideFlags: 0
@@ -5717,6 +5717,21 @@ PrefabInstance:
       propertyPath: opponent
       value: 
       objectReference: {fileID: 8748314352549877850}
+    - target: {fileID: 3024092330322805247, guid: 1d77df6d9ec713040b59ecff9351c0b4,
+        type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f1213c712fdcb974b9ab7f61d527c828, type: 2}
+    - target: {fileID: 3024092330322805247, guid: 1d77df6d9ec713040b59ecff9351c0b4,
+        type: 3}
+      propertyPath: flashDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024092330322805247, guid: 1d77df6d9ec713040b59ecff9351c0b4,
+        type: 3}
+      propertyPath: flashDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3176359603813941652, guid: 1d77df6d9ec713040b59ecff9351c0b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5867,6 +5882,21 @@ PrefabInstance:
       propertyPath: opponent
       value: 
       objectReference: {fileID: 3052266021494430826}
+    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: flashMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f1213c712fdcb974b9ab7f61d527c828, type: 2}
+    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: flashDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: flashDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7680290863925419709, guid: d19da320cce575a458aa2b5362176a28,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6041,6 +6071,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 654971771040871200, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971771040871200, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7928049
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971771040871200, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.24679601
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971771040871200, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 524288
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971771040871200, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3791
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971772175515396, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971772175515396, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7928049
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971772175515396, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.24679601
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971772175515396, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 524288
+      objectReference: {fileID: 0}
+    - target: {fileID: 654971772175515396, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3791
+      objectReference: {fileID: 0}
     - target: {fileID: 5388962474912425376, guid: cbd1f3ed55914a44db117be83aa68155,
         type: 3}
       propertyPath: m_LocalPosition.x
