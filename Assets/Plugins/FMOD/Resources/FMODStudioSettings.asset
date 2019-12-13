@@ -79,8 +79,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Environnement
   - Foleys
+  - 'Joueur '
   - 'Joueur '
   - Joueur Voix
   - Musique
