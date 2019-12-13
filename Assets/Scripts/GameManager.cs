@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject roomLight;
     [SerializeField] private GameObject[] roundTexts;
     [SerializeField] private GameObject[] victoryTexts;
+    [SerializeField] private GameObject restartIndication;
     [SerializeField] private GameObject tuto;
     [SerializeField] private SceneField menu;
 
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
     {
         roomLight.SetActive(true);
         yield return new WaitForSeconds(delayBeforeBeingAbleToRestart);
+        restartIndication.SetActive(true);
         state = GameState.GameEnd;
         roomLight.SetActive(false);
     }
@@ -210,14 +212,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Restart()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
     private IEnumerator Menu()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(menu.SceneName);
     }
 
