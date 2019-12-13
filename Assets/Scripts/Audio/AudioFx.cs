@@ -29,6 +29,6 @@ public class AudioFx : MonoBehaviour
 
 	public static void AudioTV()
 	{
-		RuntimeManager.PlayOneShot(instance.tvAudio);
+		RuntimeManager.PlayOneShot(instance.tvAudio,FindObjectOfType<TVFlicker>().transform.position);
 	}
 }
