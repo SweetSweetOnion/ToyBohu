@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.3
-  shakeMagnitude: 20
+  shakeMagnitude: 50
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1339,8 +1339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a624977dec4bad41ae8cba7c78a21aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.2
-  shakeMagnitude: 5
+  duration: 0.3
+  shakeMagnitude: 50
   curve:
     serializedVersion: 2
     m_Curve:
