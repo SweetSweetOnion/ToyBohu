@@ -169,6 +169,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 43437
+--- !u!114 &-8088546670302983422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voix/Respiration fighter 1
+  m_EditorClassIdentifier: 
+  Path: event:/Voix/Respiration fighter 1
+  guid: 43664b95a0d2bd40a465418a9f81bb55
+  Banks:
+  - {fileID: -2046334555017619429}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 2150
 --- !u!114 &-7961312678946841007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +259,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
+--- !u!114 &-7421615488730270250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Joueur .bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Joueur .bank
+  SubDir: 
+  lastModified: 637118577051775560
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7375969943637812288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +732,24 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 1
+--- !u!114 &-3981911845179536625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Foleys.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Foleys.bank
+  SubDir: 
+  lastModified: 637118435735104042
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3912117226404759857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,6 +793,24 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
+  Exists: 1
+--- !u!114 &-3487813105314765218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musique.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Musique.bank
+  SubDir: 
+  lastModified: 637118577052033054
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &-3366957025755888580
 MonoBehaviour:
@@ -847,6 +924,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 2150
+--- !u!114 &-2046334555017619429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Joueur Voix.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Joueur Voix.bank
+  SubDir: 
+  lastModified: 637118475093413231
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2031073913821022847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1130,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 150
   Length: 1100
+--- !u!114 &-238731072265566885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Environnement.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Environnement.bank
+  SubDir: 
+  lastModified: 637118475095038887
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-86555441381907960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,7 +1310,7 @@ MonoBehaviour:
 >>>>>>> master
   StringsBanks:
   - {fileID: 158626404174976470}
-  stringsBankWriteTime: 637118498192483045
+  stringsBankWriteTime: 637118435735064145
   cacheVersion: 3
 --- !u!114 &158626404174976470
 MonoBehaviour:
@@ -1213,7 +1326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD Nano Projet/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637118498192483045
+  lastModified: 637118435735064145
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1993,6 +2106,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 150
   Length: 1450
+--- !u!114 &7245371588189963449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps_place/Tapis
+  m_EditorClassIdentifier: 
+  Name: Tapis
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &7310258979496313201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2149,7 +2279,7 @@ MonoBehaviour:
 >>>>>>> master
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
