@@ -26,7 +26,7 @@ public class UIVoixAudioManager : MonoBehaviour
     [FMODUnity.EventRef]
     public string YellowWinsEvent;
 
-    private void LooseAudio()
+    public void LooseAudio()
     {
         RuntimeManager.PlayOneShot(LooseEvent);
        

@@ -25,6 +25,11 @@ public class EventManager : MonoBehaviour
     private float counter = 0f;
     private float carSpawnCooldown = 5f;
 
+    [Header("Instances")]
+    [SerializeField] private GameObject[] cars;
+    [SerializeField] private GameObject lightning;
+    [SerializeField] private GameObject veilleuse;
+
     private void Update()
     {
         counter += Time.deltaTime;
@@ -32,9 +37,9 @@ public class EventManager : MonoBehaviour
         {
             
             counter = 0f;
-            if (Random.value > 0.66f)
+            if (Random.value > 0.75f)
             {
-				Car.SpawnCar();
+				SpawnCar(0);
                 if(Random.value > 0.5f)
                 {
                     StartCoroutine("SpawnCarAfterABit");
@@ -42,34 +47,58 @@ public class EventManager : MonoBehaviour
             }
             else if(Random.value > 0.5f)
             {
-                Lightning.SpawnLightning();
+                SpawnLightning();
                 StartCoroutine("SpawnLightningAfterABit");
+            }
+            else if(Random.value > 0.5f)
+            {
+                TVFlicker.instance.Trigger();
             }
             else
             {
-                TVFlicker.instance.Trigger();
+                StartCoroutine("Veilleuse");
             }
         }
 
 	}
 
+    private IEnumerator Veilleuse()
+    {
+        veilleuse.SetActive(true);
+        float rand = Random.Range(3f, 5f);
+        yield return new WaitForSeconds(rand);
+        veilleuse.SetActive(false);
+    }
+
+    private void SpawnCar(int i)
+    {
+        cars[i].SetActive(true);
+        cars[i].GetComponent<Car>().SpawnCar();
+    }
+
+    private void SpawnLightning()
+    {
+        lightning.SetActive(true);
+        lightning.GetComponent<Lightning>().SpawnLightning();
+    }
+
 	private IEnumerator SpawnCarAfterABit()
     {
 		float rand = Random.Range(0.4f, 1.5f);
         yield return new WaitForSeconds(rand);
-        Car.SpawnCar();
+        SpawnCar(1);
     }
 
     private IEnumerator SpawnLightningAfterABit()
     {
-        float rand = Random.Range(0.15f, 1.5f);
+        float rand = Random.Range(0.3f, 1.5f);
         yield return new WaitForSeconds(rand);
-        Lightning.SpawnLightning();
+        SpawnLightning();
         if(Random.value > 0.8f)
         {
-            rand = Random.Range(0.15f, 0.6f);
+            rand = Random.Range(0.18f, 1.1f);
             yield return new WaitForSeconds(rand);
-            Lightning.SpawnLightning();
+            SpawnLightning();
         }
     }
 

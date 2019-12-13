@@ -182,6 +182,10 @@ public class Fighter : MonoBehaviour
         }
 		if(nextState != state)
 		{
+			if(state == FighterState.Dash)
+			{
+				fxManager.EndDashFx();
+			}
 			state = nextState;
         }
         attackBuffer = false;
@@ -282,6 +286,10 @@ public class Fighter : MonoBehaviour
 
     public bool DashButton()
     {
+        if (GameManager.Instance.IsGameEnd())
+        {
+            GameManager.Instance.RestartGame();
+        }
         if (!GameManager.Instance.PlayerCanInteract())
         {
             return false;
@@ -296,6 +304,10 @@ public class Fighter : MonoBehaviour
 
     public bool AttackButton()
     {
+        if (GameManager.Instance.IsGameEnd())
+        {
+            GameManager.Instance.GoToMenu();
+        }
         if (!GameManager.Instance.PlayerCanInteract())
         {
             return false;

@@ -38,48 +38,48 @@ public class PlayerAudioManager : MonoBehaviour
 
 	private void Start()
 	{
-		footInstance = RuntimeManager.CreateInstance(footstepsEvent);
+		//footInstance = RuntimeManager.CreateInstance(footstepsEvent);
 		//footInstance.start();
-		respiration = RuntimeManager.CreateInstance(respirationFighterEvent);
+		//respiration = RuntimeManager.CreateInstance(respirationFighterEvent);
 	}
 
 
 	 public void AudioDash()
     {
-        RuntimeManager.PlayOneShot(dashEvent);
+        RuntimeManager.PlayOneShot(dashEvent,transform.position);
     }
 
     public void AudioAttaque1_Woosh()
     {
-        RuntimeManager.PlayOneShot(attaque1_etape1_wooshEvent);
+        RuntimeManager.PlayOneShot(attaque1_etape1_wooshEvent, transform.position);
     }
     public void AudioAttaque2_Woosh()
     {
-        RuntimeManager.PlayOneShot(attaque2_etape1_wooshEvent);
+        RuntimeManager.PlayOneShot(attaque2_etape1_wooshEvent, transform.position);
     }
     public void AudioBlockArmes()
     {
-        RuntimeManager.PlayOneShot(block_armesEvent);
+        RuntimeManager.PlayOneShot(block_armesEvent, transform.position);
     }
     public void AudioHitBody()
     {
-        RuntimeManager.PlayOneShot(hit_bodyEvent);
+        RuntimeManager.PlayOneShot(hit_bodyEvent, transform.position);
     }
     public void AudioEpee_Out()
     {
-        RuntimeManager.PlayOneShot(epee_out_fourreauEvent);
+        RuntimeManager.PlayOneShot(epee_out_fourreauEvent, transform.position);
     }
     public void AudioEpee_in()
     {
-        RuntimeManager.PlayOneShot(epee_in_fourreauEvent);
+        RuntimeManager.PlayOneShot(epee_in_fourreauEvent, transform.position);
     }
 	
     public void AudioFootsteps(int audioMaterial)
     {
-		footInstance = RuntimeManager.CreateInstance(footstepsEvent);
+		/*footInstance = RuntimeManager.CreateInstance(footstepsEvent);
 		footInstance.setParameterByName("Tapis", audioMaterial);
 		RuntimeManager.AttachInstanceToGameObject(footInstance, transform, null as Rigidbody);
-		footInstance.start();
+		footInstance.start();*/
 		//RuntimeManager.PlayOneShot(footstepsEvent);
     }
 
@@ -105,17 +105,17 @@ public class PlayerAudioManager : MonoBehaviour
 
 	public void AudioVoixAttaque()
 	{
-		RuntimeManager.PlayOneShot(voix_attaqueEvent);
+		RuntimeManager.PlayOneShot(voix_attaqueEvent, transform.position);
 	}
 
 	public void AudioVoixDefense()
 	{
-		RuntimeManager.PlayOneShot(voix_defenseEvent);
+		RuntimeManager.PlayOneShot(voix_defenseEvent, transform.position);
 	}
 
 	public void AudioVoixMort()
 	{
-		RuntimeManager.PlayOneShot(voix_mortEvent);
+		RuntimeManager.PlayOneShot(voix_mortEvent, transform.position);
 	}
 }
 
