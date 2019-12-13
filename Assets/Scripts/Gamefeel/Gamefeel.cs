@@ -127,6 +127,11 @@ public class Gamefeel : MonoBehaviour
 		inShake = false;
 	}
 
+    public bool IsInFreeze()
+    {
+        return inFreeze;
+    }
+
     public void InitFreezeFrame(float duration, float force)
     {
         InitFreezeFrame(duration, force, thisFreezeCurve);

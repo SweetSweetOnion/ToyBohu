@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool beginRoundIsLit = true;
     [SerializeField] private float endRoundDelay = 2f;
     [SerializeField] private float tutoDelay = 20f;
+    [SerializeField] private float delayBeforeBeingAbleToRestart = 7f;
     [Header("Links")]
 	[SerializeField] private AudioManager audioManager;
     [SerializeField] private Fighter[] fighters;
@@ -98,6 +99,14 @@ public class GameManager : MonoBehaviour
         InitRound();
     }
 
+    private IEnumerator DelayBeforeGameEnd()
+    {
+        roomLight.SetActive(true);
+        yield return new WaitForSeconds(delayBeforeBeingAbleToRestart);
+        state = GameState.GameEnd;
+        roomLight.SetActive(false);
+    }
+
     private IEnumerator DelayBeforeFight()
     {
         roundTexts[currentRound].SetActive(true);
@@ -150,14 +159,35 @@ public class GameManager : MonoBehaviour
         return state == GameState.Fight || state == GameState.RoundEnd || state == GameState.Tuto;
     }
 
-    public IEnumerator Restart()
+    public void RestartGame()
+    {
+        StartCoroutine("Restart");
+    }
+
+    public void GoToMenu()
+    {
+        StartCoroutine("Menu");
+    }
+
+    private IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    private IEnumerator Menu()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(); Ici on ajoutera la scène du menu principal !
     }
 
     public void TryWin()
     {
+        if(state != GameState.Fight)
+        {
+            return;
+        }
         for(int i = 0; i < 2; ++i)
         {
             if (fighters[i].IsDead())
@@ -165,8 +195,8 @@ public class GameManager : MonoBehaviour
                 ++victory[(i + 1) % 2];
                 if (victory[(i + 1) % 2] >= 2)
                 {
-                    state = GameState.GameEnd;
-                    StartCoroutine("Restart");
+                    state = GameState.RoundEnd;
+                    StartCoroutine("DelayBeforeGameEnd");
                 }
                 else
                 {
@@ -192,4 +222,8 @@ public class GameManager : MonoBehaviour
         return fighters[fighter].getHp();
     }
 
+    public bool IsGameEnd()
+    {
+        return state == GameState.GameEnd;
+    }
 }

@@ -28,6 +28,7 @@ public class EventManager : MonoBehaviour
     [Header("Instances")]
     [SerializeField] private GameObject[] cars;
     [SerializeField] private GameObject lightning;
+    [SerializeField] private GameObject veilleuse;
 
     private void Update()
     {
@@ -36,7 +37,7 @@ public class EventManager : MonoBehaviour
         {
             
             counter = 0f;
-            if (Random.value > 0.66f)
+            if (Random.value > 0.75f)
             {
 				SpawnCar(0);
                 if(Random.value > 0.5f)
@@ -49,13 +50,25 @@ public class EventManager : MonoBehaviour
                 SpawnLightning();
                 StartCoroutine("SpawnLightningAfterABit");
             }
-            else
+            else if(Random.value > 0.5f)
             {
                 TVFlicker.instance.Trigger();
+            }
+            else
+            {
+                StartCoroutine("Veilleuse");
             }
         }
 
 	}
+
+    private IEnumerator Veilleuse()
+    {
+        veilleuse.SetActive(true);
+        float rand = Random.Range(3f, 5f);
+        yield return new WaitForSeconds(rand);
+        veilleuse.SetActive(false);
+    }
 
     private void SpawnCar(int i)
     {
