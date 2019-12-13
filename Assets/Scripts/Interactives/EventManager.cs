@@ -29,6 +29,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private GameObject[] cars;
     [SerializeField] private GameObject lightning;
     [SerializeField] private GameObject veilleuse;
+    [SerializeField] private Veilleuse scriptVeilleuse;
 
     private void Update()
     {
@@ -64,10 +65,12 @@ public class EventManager : MonoBehaviour
 
     private IEnumerator Veilleuse()
     {
+        scriptVeilleuse.ActivateLight();
         veilleuse.SetActive(true);
         float rand = Random.Range(3f, 5f);
         yield return new WaitForSeconds(rand);
         veilleuse.SetActive(false);
+        scriptVeilleuse.DeactivateLight();
     }
 
     private void SpawnCar(int i)
