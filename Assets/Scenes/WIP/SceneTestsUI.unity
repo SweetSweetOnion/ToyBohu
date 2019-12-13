@@ -578,6 +578,13 @@ MonoBehaviour:
   Ambiance_ExterieurEvent: "event:/Environnement/Ambiance ext\xE9rieur"
   RonflementsEvent: event:/Environnement/Ronflement enfant
   musicEvent: event:/Musique/Musique Tutoriel_Combat
+  LooseEvent: 
+  Toy_bohuEvent: 
+  PurpleEvent: 
+  PurpleWinsEvent: 
+  WinEvent: 
+  YellowEvent: 
+  YellowWinsEvent: 
 --- !u!4 &107005889
 Transform:
   m_ObjectHideFlags: 0
@@ -918,8 +925,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoundSprite:
   - {fileID: 21300000, guid: cd3c9078cb06c7144b13b412b65bb6d5, type: 3}
-  - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
-  - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
+  - {fileID: 21300000, guid: 558149de6e9af844cb73f46b750e26aa, type: 3}
+  - {fileID: 21300000, guid: e18b726fb27a0a746b853db5ffed2fad, type: 3}
   RoundUI: {fileID: 162656659}
   indexPlayer: 0
 --- !u!114 &162656659
@@ -940,7 +947,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd3c9078cb06c7144b13b412b65bb6d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e18b726fb27a0a746b853db5ffed2fad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2342,7 +2349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3fe8198c8f458478175acd204d96a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighter: {fileID: 3052266021494430826}
+  fighter: 0
+  hpBar: []
 --- !u!1 &524712348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5005,8 +5013,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoundSprite:
   - {fileID: 21300000, guid: cd3c9078cb06c7144b13b412b65bb6d5, type: 3}
-  - {fileID: 21300000, guid: 5f15dc720c2ff4d41af82a53c00b54bb, type: 3}
-  - {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
+  - {fileID: 21300000, guid: 558149de6e9af844cb73f46b750e26aa, type: 3}
+  - {fileID: 21300000, guid: e18b726fb27a0a746b853db5ffed2fad, type: 3}
   RoundUI: {fileID: 1442616486}
   indexPlayer: 1
 --- !u!114 &1442616486
@@ -5027,7 +5035,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eabf4a27536fbac4caff4c89a16f1429, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e18b726fb27a0a746b853db5ffed2fad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5380,6 +5388,8 @@ MonoBehaviour:
   beginRoundDelay: 3
   beginRoundIsLit: 1
   endRoundDelay: 2
+  tutoDelay: 20
+  delayBeforeBeingAbleToRestart: 7
   audioManager: {fileID: 107005888}
   fighters:
   - {fileID: 3052266021494430826}
@@ -5389,6 +5399,7 @@ MonoBehaviour:
   - {fileID: 1607339839}
   - {fileID: 2144975749}
   - {fileID: 1753853974}
+  tuto: {fileID: 0}
 --- !u!4 &1543081398
 Transform:
   m_ObjectHideFlags: 0
@@ -5415,6 +5426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7fddec2fc30a844391749e5371481bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cars: []
+  lightning: {fileID: 0}
+  veilleuse: {fileID: 0}
 --- !u!1 &1543817176
 GameObject:
   m_ObjectHideFlags: 0

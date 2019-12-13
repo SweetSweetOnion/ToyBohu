@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+        LastHPOfTheGame();
     }
 
     private IEnumerator DelayDuringTuto()
@@ -174,6 +175,17 @@ public class GameManager : MonoBehaviour
                 audioManager.Round3Audio();
 			//	audioManager.Round3VoixAudio();
                 break;
+        }
+    }
+
+    private void LastHPOfTheGame()
+    {
+        for(int i = 0; i < 2; ++i)
+        {
+            if(victory[i] >= 1 && fighters[(i + 1) % 2].getHp() <= 1)
+            {
+                //LastHP
+            }
         }
     }
 
