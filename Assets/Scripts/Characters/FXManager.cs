@@ -14,6 +14,11 @@ public class FXManager : MonoBehaviour
 	[SerializeField]
 	private TrailRenderer[] trails;
 
+	private void Start()
+	{
+		EndDashFx();
+	}
+
 
 	public void HitFX()
 	{
