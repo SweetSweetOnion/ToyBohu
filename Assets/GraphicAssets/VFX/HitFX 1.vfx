@@ -1164,7 +1164,7 @@ VisualEffectResource:
     - name: OnStop
       playSystems: 
       stopSystems: 00000000
-    - name: OnTriggera
+    - name: OnTrigger
       playSystems: 00000000
       stopSystems: 
     m_RuntimeVersion: 10
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   - link:
     - context: {fileID: 114023846229194376}
       slotIndex: 0
-  eventName: OnTriggera
+  eventName: OnTrigger
 --- !u!114 &8926484042661614542
 MonoBehaviour:
   m_ObjectHideFlags: 0
