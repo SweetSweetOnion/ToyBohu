@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool beginRoundIsLit = true;
     [SerializeField] private float endRoundDelay = 2f;
     [SerializeField] private float tutoDelay = 20f;
+    [SerializeField] private float delayBeforeBeingAbleToRestart = 7f;
     [Header("Links")]
 	[SerializeField] private AudioManager audioManager;
     [SerializeField] private Fighter[] fighters;
@@ -85,14 +86,25 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(tutoDelay);
         tuto.SetActive(false);
         roomLight.SetActive(false);
-        InitRound();
+		
+		InitRound();
     }
 
     private IEnumerator DelayBeforeNewRound()
     {
-        state = GameState.RoundEnd;
+		state = GameState.RoundEnd;
+        roomLight.SetActive(true);
         yield return new WaitForSeconds(endRoundDelay);
+        roomLight.SetActive(false);
         InitRound();
+    }
+
+    private IEnumerator DelayBeforeGameEnd()
+    {
+        roomLight.SetActive(true);
+        yield return new WaitForSeconds(delayBeforeBeingAbleToRestart);
+        state = GameState.GameEnd;
+        roomLight.SetActive(false);
     }
 
     private IEnumerator DelayBeforeFight()
@@ -109,6 +121,7 @@ public class GameManager : MonoBehaviour
     private void InitRound()
     {
         ++currentRound;
+        UpdateAudio();
         state = GameState.RoundStart;
         for (int i = 0; i < 2; ++i)
         {
@@ -116,7 +129,7 @@ public class GameManager : MonoBehaviour
             fighters[i].Initialize();
             fighters[i].SetOpponent(fighters[(i + 1) % 2]);
         }
-		UpdateAudio();
+		
 		StartCoroutine("DelayBeforeFight");
     }
 
@@ -126,12 +139,15 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 audioManager.Round1Audio();
+			//	audioManager.Round1VoixAudio();
                 break;
             case 1:
                 audioManager.Round2Audio();
+			//	audioManager.Round2VoixAudio();
                 break;
             case 2:
                 audioManager.Round3Audio();
+			//	audioManager.Round3VoixAudio();
                 break;
         }
     }
@@ -143,14 +159,35 @@ public class GameManager : MonoBehaviour
         return state == GameState.Fight || state == GameState.RoundEnd || state == GameState.Tuto;
     }
 
-    public IEnumerator Restart()
+    public void RestartGame()
+    {
+        StartCoroutine("Restart");
+    }
+
+    public void GoToMenu()
+    {
+        StartCoroutine("Menu");
+    }
+
+    private IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    private IEnumerator Menu()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(); Ici on ajoutera la scène du menu principal !
     }
 
     public void TryWin()
     {
+        if(state != GameState.Fight)
+        {
+            return;
+        }
         for(int i = 0; i < 2; ++i)
         {
             if (fighters[i].IsDead())
@@ -158,8 +195,8 @@ public class GameManager : MonoBehaviour
                 ++victory[(i + 1) % 2];
                 if (victory[(i + 1) % 2] >= 2)
                 {
-                    state = GameState.GameEnd;
-                    StartCoroutine("Restart");
+                    state = GameState.RoundEnd;
+                    StartCoroutine("DelayBeforeGameEnd");
                 }
                 else
                 {
@@ -177,7 +214,16 @@ public class GameManager : MonoBehaviour
 
 	public int GetRoundId()
 	{
-		return victory[0] + victory[1];
+		return currentRound;
 	}
 
+    public int GetHP(int fighter)
+    {
+        return fighters[fighter].getHp();
+    }
+
+    public bool IsGameEnd()
+    {
+        return state == GameState.GameEnd;
+    }
 }
