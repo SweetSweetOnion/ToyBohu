@@ -1687,7 +1687,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 0.9150943, g: 0.6565998, b: 0.6517889, a: 1}
+  m_Color: {r: 0.5800552, g: 0.6166143, b: 0.745283, a: 1}
   m_Intensity: 47.746483
   m_Range: 5.5034747
   m_SpotAngle: 30
@@ -2276,6 +2276,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &881242219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7977819192417808284, guid: 28f0f6a1b48557840bb50fe479a6763c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2039069724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &881242222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881242219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5f5906a8b60e741a731e040ebf234e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialUnlit: {fileID: -3897874210364233145, guid: 28f0f6a1b48557840bb50fe479a6763c,
+    type: 3}
+  materialLit: {fileID: 2100000, guid: a9fe45c7d466d3a49b54006a039716e0, type: 2}
 --- !u!1 &885146136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8046585489834871536, guid: 8e973e20e2334444e82c1d00499fdd9b,
@@ -2597,6 +2618,12 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &950992342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 950992342, guid: 8e973e20e2334444e82c1d00499fdd9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8046585490174494952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &993639433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3673,7 +3700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningAudio: event:/Environnement/Tonerre
-  tvAudio: "event:/Environnement/T\xE9l\xE9 on"
+  tvAudio: "event:/Environnement/T\xE9l\xE9 glitch"
   carAudio: event:/Environnement/Voiture passage L to R
 --- !u!96 &1370432498 stripped
 TrailRenderer:
@@ -3934,7 +3961,13 @@ MonoBehaviour:
   - {fileID: 885146136}
   - {fileID: 1636503960}
   - {fileID: 595912473}
+  victoryTexts:
+  - {fileID: 950992342}
+  - {fileID: 1656038821}
   tuto: {fileID: 1292215930}
+  menu:
+    m_SceneAsset: {fileID: 102900000, guid: 1cb924d9e4078c041a0325eec32505d0, type: 3}
+    m_SceneName: Menu
 --- !u!4 &1543081398
 Transform:
   m_ObjectHideFlags: 0
@@ -4234,6 +4267,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974b44ed0afceb44eba07c9b634b1f6e, type: 3}
+--- !u!1 &1656038821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1656038821, guid: 8e973e20e2334444e82c1d00499fdd9b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8046585490174494952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1697799213
 GameObject:
   m_ObjectHideFlags: 0
@@ -4941,6 +4980,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: veilleuse_03
       objectReference: {fileID: 0}
+    - target: {fileID: 1318462475825722627, guid: 28f0f6a1b48557840bb50fe479a6763c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3897874210364233145, guid: 28f0f6a1b48557840bb50fe479a6763c,
+        type: 3}
+    - target: {fileID: 1318462475825722627, guid: 28f0f6a1b48557840bb50fe479a6763c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977819192417808284, guid: 28f0f6a1b48557840bb50fe479a6763c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28f0f6a1b48557840bb50fe479a6763c, type: 3}
 --- !u!1 &2052623732
@@ -5524,6 +5579,11 @@ PrefabInstance:
       propertyPath: veilleuse
       value: 
       objectReference: {fileID: 610102485}
+    - target: {fileID: 5388962474912425377, guid: cbd1f3ed55914a44db117be83aa68155,
+        type: 3}
+      propertyPath: scriptVeilleuse
+      value: 
+      objectReference: {fileID: 881242222}
     - target: {fileID: 5388962474912425379, guid: cbd1f3ed55914a44db117be83aa68155,
         type: 3}
       propertyPath: m_Name
