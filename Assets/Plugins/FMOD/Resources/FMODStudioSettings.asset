@@ -15,7 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/FMOD Nano Projet/FMOD Nano Projet.fspro
+  sourceProjectPath: Assets\FMOD Nano Projet\FMOD Nano Projet.fspro
   sourceBankPath: Assets\FMOD Nano Projet\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
@@ -41,7 +41,7 @@ MonoBehaviour:
   - Platform: 1
     Value: 1
   - Platform: 2
-    Value: 1
+    Value: 0
   - Platform: 20
     Value: 0
   OverlaySettings:
@@ -78,19 +78,11 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  - Master
   Banks:
+  - Environnement
   - Foleys
-  - Foleys
   - 'Joueur '
-  - 'Joueur '
-  - 'Joueur '
-<<<<<<< HEAD
   - Joueur Voix
-=======
->>>>>>> master
-  - Joueur Voix
-  - Musique
   - Musique
   - UI Voix
   BanksToLoad: []
