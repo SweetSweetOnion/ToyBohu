@@ -51,13 +51,15 @@ public class EventManager : MonoBehaviour
                 SpawnLightning();
                 StartCoroutine("SpawnLightningAfterABit");
             }
-            else if(Random.value > 0.5f)
+            else if(Random.value > 0.5f && TVFlicker.instance != null)
             {
                 TVFlicker.instance.Trigger();
             }
             else
             {
-                StartCoroutine("Veilleuse");
+                if (scriptVeilleuse != null && veilleuse != null) {
+                    StartCoroutine("Veilleuse");
+                }
             }
         }
 

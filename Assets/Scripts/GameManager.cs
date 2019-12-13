@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] roundTexts;
     [SerializeField] private GameObject[] victoryTexts;
     [SerializeField] private GameObject tuto;
+    [SerializeField] private SceneField menu;
 
     private Vector3[] startingPositions = new Vector3[2];
     private PlayerInputManager playerInputManager;
@@ -217,7 +218,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator Menu()
     {
         yield return new WaitForSeconds(3);
-        //SceneManager.LoadScene(); Ici on ajoutera la scène du menu principal !
+        SceneManager.LoadScene(menu.SceneName);
     }
 
     public void TryWin()

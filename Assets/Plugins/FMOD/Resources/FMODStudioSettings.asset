@@ -78,11 +78,17 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
+  - Master
   Banks:
   - Environnement
   - Foleys
+  - Foleys
+  - 'Joueur '
+  - 'Joueur '
   - 'Joueur '
   - Joueur Voix
+  - Joueur Voix
+  - Musique
   - Musique
   - UI Voix
   BanksToLoad: []
