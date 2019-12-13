@@ -112,7 +112,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator DelayBeforeRoundText()
     {
-        yield return new WaitForSeconds(1.2f);
+		UpdateAudio();
+		yield return new WaitForSeconds(1.2f);
         roundTexts[currentRound].SetActive(true);
     }
     
@@ -129,14 +130,23 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator DelayBeforeWinnerText()
     {
-        yield return new WaitForSeconds(1f);
-        victoryTexts[winner].SetActive(true);
-    }
+		audioManager.EndMatch();
+		yield return new WaitForSeconds(1f);
+		victoryTexts[winner].SetActive(true);
+		if (winner == 1)
+		{
+			audioManager.PurpleWinsAudio();
+		}
+		else
+		{
+			audioManager.YellowWinsAudio();
+		}
+	}
 
     private void InitRound()
     {
         ++currentRound;
-        UpdateAudio();
+       
         state = GameState.RoundStart;
         for (int i = 0; i < 2; ++i)
         {
@@ -169,13 +179,15 @@ public class GameManager : MonoBehaviour
 
     private void LastHPOfTheGame()
     {
+		bool b = false;
         for(int i = 0; i < 2; ++i)
         {
             if(victory[i] >= 1 && fighters[(i + 1) % 2].getHp() <= 1)
             {
-                //LastHP
+				b = true;
             }
         }
+		audioManager.lastPV(b);
     }
 
     //Public methods;
