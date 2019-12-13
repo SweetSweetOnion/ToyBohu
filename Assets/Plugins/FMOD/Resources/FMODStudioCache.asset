@@ -38,8 +38,13 @@ MonoBehaviour:
   Path: "event:/Environnement/T\xE9l\xE9 glitch"
   guid: e4940c1b61c5a34fa3a1b34405c4d281
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 0
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+>>>>>>> master
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -79,8 +84,13 @@ MonoBehaviour:
   Path: event:/Environnement/Ronflement enfant
   guid: 8268fc6c9367e34ba488885fb06dd8f3
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 1
+=======
+  - {fileID: -5623785397467008469}
+  IsStream: 0
+>>>>>>> master
   Is3D: 1
   IsOneShot: 0
   Parameters: []
@@ -120,10 +130,17 @@ MonoBehaviour:
   Path: "event:/Environnement/T\xE9l\xE9 off"
   guid: adc60c476fdb8a409bf9b36b0f935166
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+>>>>>>> master
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -143,7 +160,11 @@ MonoBehaviour:
   Path: event:/Voix/Voix_mort_fighter 1
   guid: 58957d915eee27439db7e183672fd736
   Banks:
+<<<<<<< HEAD
   - {fileID: -4410346623092228192}
+=======
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -189,8 +210,13 @@ MonoBehaviour:
   Path: "event:/Environnement/Ambiance int\xE9rieur round 2"
   guid: c55b9bba9d6dcf499dfca40eee7cf1cb
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 1
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 0
+>>>>>>> master
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -212,7 +238,11 @@ MonoBehaviour:
   Path: event:/Foleys/Balle roule
   guid: 776a5ed098a19b4bb8b6d021d83ad17d
   Banks:
+<<<<<<< HEAD
   - {fileID: -8958041943496360808}
+=======
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -235,9 +265,15 @@ MonoBehaviour:
   Path: event:/Joueur/Attaque2_Woosh_etape1
   guid: c1aa91d009e9e445a957e6de69f659fd
   Banks:
+<<<<<<< HEAD
   - {fileID: -704398078658274344}
   IsStream: 0
   Is3D: 1
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+  Is3D: 0
+>>>>>>> master
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -260,7 +296,29 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &-4410346623092228192
+=======
+--- !u!114 &-6868273462260646411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Joueur Voix.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Joueur Voix.bank
+  SubDir: 
+  lastModified: 637118498192323463
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6785882356786493660
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,7 +351,11 @@ MonoBehaviour:
   Path: event:/Environnement/Voiture passage R to L
   guid: e7fa26484ed6e047b3a8adcc92fa5ccf
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
+=======
+  - {fileID: 5812327454781725760}
+>>>>>>> master
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -319,7 +381,34 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &-3567219285791377443
+=======
+--- !u!114 &-6530644595728880018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Foleys/Balle roule
+  m_EditorClassIdentifier: 
+  Path: event:/Foleys/Balle roule
+  guid: 776a5ed098a19b4bb8b6d021d83ad17d
+  Banks:
+  - {fileID: -18337954015436678}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 99.5
+  Length: 3500
+--- !u!114 &-6160599360335356701
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -334,7 +423,11 @@ MonoBehaviour:
   Path: event:/Voix/Voix_attaque_fighter1
   guid: 31fdac9b59ac1940b22f2ef35f062084
   Banks:
+<<<<<<< HEAD
   - {fileID: -4410346623092228192}
+=======
+  - {fileID: -6868273462260646411}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -372,18 +465,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/UI/Yellow
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/UI/Yellow
   guid: 5289d42fc6641c45839ac069c5dd7004
   Banks:
   - {fileID: -7684979106727759775}
+=======
+  Path: "event:/Environnement/T\xE9l\xE9 on"
+  guid: 9693c504a5759d4da1bc968e0e19591c
+  Banks:
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+<<<<<<< HEAD
   Length: 802
 --- !u!114 &-2841720383922268939
+=======
+  Length: 0
+--- !u!114 &-5623785397467008469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Joueur .bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Joueur .bank
+  SubDir: 
+  lastModified: 637118498192423201
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5273866086741137934
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,12 +518,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Musique Tutoriel_Combat/The Last PV
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: The Last PV
   Min: 0
   Max: 1
   Default: 0
   Exists: 1
 --- !u!114 &-2497763043560484767
+=======
+  Path: event:/Joueur/Dash Fighter1
+  guid: bbab0565761da545a847087a95e8207b
+  Banks:
+  - {fileID: -5623785397467008469}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 480
+--- !u!114 &-4812160913746121202
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,8 +553,13 @@ MonoBehaviour:
   Path: event:/Voix/Respiration fighter 1
   guid: 43664b95a0d2bd40a465418a9f81bb55
   Banks:
+<<<<<<< HEAD
   - {fileID: -4410346623092228192}
   IsStream: 0
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+>>>>>>> master
   Is3D: 1
   IsOneShot: 1
   Parameters: []
@@ -455,7 +598,11 @@ MonoBehaviour:
   Path: event:/Voix/Voix_mort_fighter 2
   guid: 2290529b4e386549bfc91e1393caf93b
   Banks:
+<<<<<<< HEAD
   - {fileID: -4410346623092228192}
+=======
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -475,10 +622,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/Voix/Voix_attaque_fighter2
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/Voix/Voix_attaque_fighter2
   guid: e20b43143b66fa4b8b2dddc69a1a840e
   Banks:
   - {fileID: -4410346623092228192}
+=======
+  Path: event:/Joueur/Block_armes_etape2
+  guid: d4a1de9eb847b84b9b30fcf81766d9b2
+  Banks:
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -501,7 +655,11 @@ MonoBehaviour:
   Path: event:/Joueur/Epee_sortFourreau_etape0
   guid: c75cf9072bfdab4996eb4d6b1b6ee7c3
   Banks:
+<<<<<<< HEAD
   - {fileID: -704398078658274344}
+=======
+  - {fileID: -5623785397467008469}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -524,7 +682,11 @@ MonoBehaviour:
   Path: event:/Voix/Respiration fighter 2
   guid: 5a86cd6ff85e2740aa57d99a0ac56673
   Banks:
+<<<<<<< HEAD
   - {fileID: -4410346623092228192}
+=======
+  - {fileID: -6868273462260646411}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -547,9 +709,15 @@ MonoBehaviour:
   Path: event:/Environnement/Voiture police L to R
   guid: 211b4c9c801f9f499dc66f643a7c01ec
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 1
   Is3D: 1
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 0
+  Is3D: 0
+>>>>>>> master
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -565,20 +733,109 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< HEAD
   m_Name: event:/Joueur/Dash Fighter1 2
   m_EditorClassIdentifier: 
   Path: event:/Joueur/Dash Fighter1 2
   guid: 79d39029bfb3cf4a871735f260ff13f5
   Banks:
   - {fileID: -704398078658274344}
+=======
+  m_Name: event:/Joueur/Epee_sortFourreau_etape0
+  m_EditorClassIdentifier: 
+  Path: event:/Joueur/Epee_sortFourreau_etape0
+  guid: c75cf9072bfdab4996eb4d6b1b6ee7c3
+  Banks:
+  - {fileID: -6868273462260646411}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 100
+<<<<<<< HEAD
   Length: 480
 --- !u!114 &-861867978932728342
+=======
+  Length: 2150
+--- !u!114 &-2031073913821022847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique Tutoriel_Combat/To Tutoriel
+  m_EditorClassIdentifier: 
+  Name: To Tutoriel
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-1864445041216207703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps_place/Tapis
+  m_EditorClassIdentifier: 
+  Name: Tapis
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &-1445177660472669803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musique.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Musique.bank
+  SubDir: 
+  lastModified: 637118498193105136
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1140954383732203016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Purple
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Purple
+  guid: a0e027d8178cbd478615c84c67e02241
+  Banks:
+  - {fileID: 551640259543210552}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 940
+--- !u!114 &-1062123394303210842
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,7 +850,11 @@ MonoBehaviour:
   Path: event:/UI/Win
   guid: 225e9434ce9446418cac8f665624fb9e
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
+=======
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -634,7 +895,11 @@ MonoBehaviour:
   Path: "event:/Environnement/T\xE9l\xE9 on"
   guid: 9693c504a5759d4da1bc968e0e19591c
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
+=======
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -675,8 +940,13 @@ MonoBehaviour:
   Path: event:/Voix/Voix_defense_fighter 2
   guid: 077ec9ad5291824c9d84b9b3e8619a6b
   Banks:
+<<<<<<< HEAD
   - {fileID: -4410346623092228192}
   IsStream: 0
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+>>>>>>> master
   Is3D: 1
   IsOneShot: 1
   Parameters: []
@@ -698,14 +968,65 @@ MonoBehaviour:
   Path: event:/UI/Purple
   guid: a0e027d8178cbd478615c84c67e02241
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
+=======
+  - {fileID: -5623785397467008469}
+>>>>>>> master
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+<<<<<<< HEAD
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 940
+=======
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 395
+--- !u!114 &-18337954015436678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Foleys.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Foleys.bank
+  SubDir: 
+  lastModified: 637118498192433174
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-14972129809591720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Yellow wins
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Yellow wins
+  guid: 4d42e9624361d843aaa882afd53cb83a
+  Banks:
+  - {fileID: -8977068986168495706}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 940
+  Length: 1850
+>>>>>>> master
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,6 +1040,7 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< HEAD
   - {fileID: 148923124196894758}
   - {fileID: -4358815990949714094}
   - {fileID: -8958041943496360808}
@@ -727,6 +1049,16 @@ MonoBehaviour:
   - {fileID: -516840230309287190}
   - {fileID: -3102964797476783574}
   - {fileID: -7684979106727759775}
+=======
+  - {fileID: 158626404174976470}
+  - {fileID: 5812327454781725760}
+  - {fileID: -18337954015436678}
+  - {fileID: -5623785397467008469}
+  - {fileID: -6868273462260646411}
+  - {fileID: 5536767327125255781}
+  - {fileID: -1445177660472669803}
+  - {fileID: 551640259543210552}
+>>>>>>> master
   EditorEvents:
   - {fileID: 2012439650357405059}
   - {fileID: -1014866212434174334}
@@ -775,10 +1107,17 @@ MonoBehaviour:
   - {fileID: 480519179978757418}
   EditorParameters: []
   MasterBanks:
+<<<<<<< HEAD
   - {fileID: -516840230309287190}
   StringsBanks:
   - {fileID: 148923124196894758}
   stringsBankWriteTime: 637118446487018084
+=======
+  - {fileID: 5536767327125255781}
+  StringsBanks:
+  - {fileID: 158626404174976470}
+  stringsBankWriteTime: 637118498192483045
+>>>>>>> master
   cacheVersion: 3
 --- !u!114 &12622224670367510
 MonoBehaviour:
@@ -792,6 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/UI/Round2
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/UI/Round2
   guid: 64f41b87ae7f1c438a35fadbdf4f88a7
   Banks:
@@ -804,6 +1144,69 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 0
 --- !u!114 &148923124196894758
+=======
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637118498192483045
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3704
+  Exists: 1
+--- !u!114 &551640259543210552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI Voix.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/UI Voix.bank
+  SubDir: 
+  lastModified: 637118498192602721
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &1013709255287339563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique Tutoriel_Combat/Rounds
+  m_EditorClassIdentifier: 
+  Name: Rounds
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &1442975991518405116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps_place/Tapis
+  m_EditorClassIdentifier: 
+  Name: Tapis
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &1709743082967483369
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -838,7 +1241,11 @@ MonoBehaviour:
   Path: event:/Voix/Voix_defense_fighter1
   guid: a6c8345d99cc6b40bf140720079dfa6c
   Banks:
+<<<<<<< HEAD
   - {fileID: -4410346623092228192}
+=======
+  - {fileID: -6868273462260646411}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -856,13 +1263,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+<<<<<<< HEAD
   m_Name: event:/UI/Loose
+=======
+  m_Name: event:/Musique/Musique Tutoriel_Combat
+  m_EditorClassIdentifier: 
+  Path: event:/Musique/Musique Tutoriel_Combat
+  guid: 74b7cc7ed381e84cb154761164473b3f
+  Banks:
+  - {fileID: -1445177660472669803}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8211454620475029668}
+  - {fileID: 2967880332942749466}
+  - {fileID: 4593308531816822511}
+  - {fileID: 2916328902062047951}
+  - {fileID: 1013709255287339563}
+  - {fileID: -14972129809591720}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 230383
+--- !u!114 &1953529494989848203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Environnement/Ambiance int\xE9rieur base"
+>>>>>>> master
   m_EditorClassIdentifier: 
   Path: event:/UI/Loose
   guid: ef3fd20c7f66534b9b0c3a25f9bd6e12
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
   IsStream: 0
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+>>>>>>> master
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -884,8 +1329,53 @@ MonoBehaviour:
   Path: event:/Environnement/Voiture passage L to R
   guid: 59c9a8f7da45934885658fec6ec50f01
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 1
+=======
+  - {fileID: -1445177660472669803}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 40166
+--- !u!114 &2269164491066251566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique Tutoriel_Combat/The Last PV
+  m_EditorClassIdentifier: 
+  Name: The Last PV
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &2660576578304561059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voix/Respiration fighter 2
+  m_EditorClassIdentifier: 
+  Path: event:/Voix/Respiration fighter 2
+  guid: 5a86cd6ff85e2740aa57d99a0ac56673
+  Banks:
+  - {fileID: -6868273462260646411}
+  IsStream: 0
+>>>>>>> master
   Is3D: 1
   IsOneShot: 1
   Parameters: []
@@ -909,7 +1399,81 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &1341544325921195194
+=======
+--- !u!114 &2916328902062047951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique Tutoriel_Combat/To Fin du Combat
+  m_EditorClassIdentifier: 
+  Name: To Fin du Combat
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &2967880332942749466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: "parameter:/Musique Tutoriel_Combat/To D\xE9but Combat"
+  m_EditorClassIdentifier: 
+  Name: "To D\xE9but Combat"
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &3381181675880398754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637118514446823190
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3645620003948371617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Musique.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Musique.bank
+  SubDir: 
+  lastModified: 637118514447012688
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4235923293394741419
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -924,10 +1488,17 @@ MonoBehaviour:
   Path: "event:/Environnement/Ambiance int\xE9rieur round 3"
   guid: 423f3c9f6cd47841b76f70e0977a44af
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
+=======
+  - {fileID: -6868273462260646411}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+>>>>>>> master
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -947,7 +1518,11 @@ MonoBehaviour:
   Path: event:/UI/Yellow wins
   guid: 4d42e9624361d843aaa882afd53cb83a
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
+=======
+  - {fileID: -5623785397467008469}
+>>>>>>> master
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -990,12 +1565,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Musique Tutoriel_Combat/To Tutoriel
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  Path: event:/Joueur/Epee_sortFourreau_etape0
+  guid: c75cf9072bfdab4996eb4d6b1b6ee7c3
+  Banks:
+  - {fileID: -5623785397467008469}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 300
+--- !u!114 &4593308531816822511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique Tutoriel_Combat/To Tutoriel
+  m_EditorClassIdentifier: 
+>>>>>>> master
   Name: To Tutoriel
   Min: 0
   Max: 1
   Default: 0
   Exists: 1
+<<<<<<< HEAD
 --- !u!114 &3404052669787686044
+=======
+--- !u!114 &4635088443962404911
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1010,7 +1615,11 @@ MonoBehaviour:
   Path: event:/UI/Menu Toy-bohu
   guid: 8b3fc9e3cb258244a1bdf4632596eac6
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
+=======
+  - {fileID: 5812327454781725760}
+>>>>>>> master
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1033,7 +1642,11 @@ MonoBehaviour:
   Path: event:/Joueur/Dash Fighter1
   guid: bbab0565761da545a847087a95e8207b
   Banks:
+<<<<<<< HEAD
   - {fileID: -704398078658274344}
+=======
+  - {fileID: -6868273462260646411}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1053,6 +1666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: "event:/Environnement/T\xE9l\xE9 Background"
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: "event:/Environnement/T\xE9l\xE9 Background"
   guid: 9c40cda4a2df474a81bd498339d2171f
   Banks:
@@ -1065,6 +1679,33 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 2000
 --- !u!114 &3984800620760847606
+=======
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Joueur .bank
+  SubDir: 
+  lastModified: 637118514446883029
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5536767327125255781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637118498192383308
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &5754205537124249945
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1076,6 +1717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
   m_Name: event:/Musique/Musique Menu
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Path: event:/Musique/Musique Menu
   guid: d5ab6dea1952b742898998d9451e0f49
   Banks:
@@ -1088,6 +1730,32 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 40166
 --- !u!114 &4056957421806477005
+=======
+  Name: Rounds
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &5812327454781725760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Joueur .bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD Nano Projet/Build/Desktop/Joueur .bank
+  SubDir: 
+  lastModified: 637118498193573780
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6323890113492908122
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1102,7 +1770,11 @@ MonoBehaviour:
   Path: event:/Joueur/Block_armes_etape2
   guid: d4a1de9eb847b84b9b30fcf81766d9b2
   Banks:
+<<<<<<< HEAD
   - {fileID: -704398078658274344}
+=======
+  - {fileID: -5623785397467008469}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1125,8 +1797,13 @@ MonoBehaviour:
   Path: "event:/Environnement/Ambiance int\xE9rieur base"
   guid: 9ef44fec026858448dae7a5c715c35c8
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 1
+=======
+  - {fileID: 551640259543210552}
+  IsStream: 0
+>>>>>>> master
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -1148,7 +1825,11 @@ MonoBehaviour:
   Path: event:/Musique/Musique Tutoriel_Combat
   guid: 74b7cc7ed381e84cb154761164473b3f
   Banks:
+<<<<<<< HEAD
   - {fileID: -3102964797476783574}
+=======
+  - {fileID: 5812327454781725760}
+>>>>>>> master
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1177,7 +1858,11 @@ MonoBehaviour:
   Path: event:/Joueur/Attaque1_Woosh_etape1 2
   guid: dde7934abd4dcd4cad291b4ac270f2b8
   Banks:
+<<<<<<< HEAD
   - {fileID: -704398078658274344}
+=======
+  - {fileID: -5623785397467008469}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1197,12 +1882,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Musique Tutoriel_Combat/Rounds
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Name: Rounds
   Min: 0
   Max: 3
   Default: 0
   Exists: 1
 --- !u!114 &5097466122099962696
+=======
+  Path: "event:/Environnement/Ambiance ext\xE9rieur"
+  guid: f6366ed263d87344bbb4ad183eccdc43
+  Banks:
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 276592
+--- !u!114 &7563489367040849826
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1217,11 +1917,20 @@ MonoBehaviour:
   Path: event:/Environnement/Voiture police R to L
   guid: cc0d73cb28b4e440b7e35a6ca4d31866
   Banks:
+<<<<<<< HEAD
   - {fileID: -4358815990949714094}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters: []
+=======
+  - {fileID: -5623785397467008469}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 1442975991518405116}
+>>>>>>> master
   MinDistance: 1
   MaxDistance: 150
   Length: 2000
@@ -1257,7 +1966,11 @@ MonoBehaviour:
   Path: event:/Foleys/Pouet jouet
   guid: d8b9e5705021a149929fa014177ae421
   Banks:
+<<<<<<< HEAD
   - {fileID: -8958041943496360808}
+=======
+  - {fileID: -18337954015436678}
+>>>>>>> master
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1265,7 +1978,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 99.5
   Length: 570
+<<<<<<< HEAD
 --- !u!114 &6877447263699580215
+=======
+--- !u!114 &8211454620475029668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Musique Tutoriel_Combat/Rounds
+  m_EditorClassIdentifier: 
+  Name: Rounds
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
+--- !u!114 &8608367995370781740
+>>>>>>> master
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1280,8 +2014,13 @@ MonoBehaviour:
   Path: event:/UI/Round1
   guid: 7809a147c8619e47beb7503d13d4215f
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
   IsStream: 0
+=======
+  - {fileID: 5812327454781725760}
+  IsStream: 1
+>>>>>>> master
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -1303,7 +2042,11 @@ MonoBehaviour:
   Path: event:/UI/Purple wins
   guid: 0fb5a625a366f642a93a389559bd810b
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
+=======
+  - {fileID: 5812327454781725760}
+>>>>>>> master
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1349,7 +2092,11 @@ MonoBehaviour:
   Path: event:/UI/Round3
   guid: 35fd28106269374b984087c1bc408bda
   Banks:
+<<<<<<< HEAD
   - {fileID: -7684979106727759775}
+=======
+  - {fileID: 551640259543210552}
+>>>>>>> master
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1372,8 +2119,13 @@ MonoBehaviour:
   Path: event:/Joueur/Footsteps_place
   guid: 8e04fd8bc3e974439a572090d613ed55
   Banks:
+<<<<<<< HEAD
   - {fileID: -704398078658274344}
   IsStream: 1
+=======
+  - {fileID: -6868273462260646411}
+  IsStream: 0
+>>>>>>> master
   Is3D: 1
   IsOneShot: 1
   Parameters:
