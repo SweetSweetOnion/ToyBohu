@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Fighter[] fighters;
     [SerializeField] private GameObject roomLight;
     [SerializeField] private GameObject[] roundTexts;
+    [SerializeField] private GameObject[] victoryTexts;
     [SerializeField] private GameObject tuto;
 
     private Vector3[] startingPositions = new Vector3[2];
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private int[] victory = new int[2];
     private int currentRound;
+    private int winner = -1;
 
 
     private void Start()
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+        LastHPOfTheGame();
     }
 
     private IEnumerator DelayDuringTuto()
@@ -107,15 +110,27 @@ public class GameManager : MonoBehaviour
         roomLight.SetActive(false);
     }
 
+    private IEnumerator DelayBeforeRoundText()
+    {
+        yield return new WaitForSeconds(1.2f);
+        roundTexts[currentRound].SetActive(true);
+    }
+    
     private IEnumerator DelayBeforeFight()
     {
-        roundTexts[currentRound].SetActive(true);
         state = GameState.RoundStart;
         roomLight.SetActive(beginRoundIsLit);
+        StartCoroutine(DelayBeforeRoundText());
         yield return new WaitForSeconds(beginRoundDelay);
         roomLight.SetActive(false);
         roundTexts[currentRound].SetActive(false);
         state = GameState.Fight;
+    }
+
+    private IEnumerator DelayBeforeWinnerText()
+    {
+        yield return new WaitForSeconds(1f);
+        victoryTexts[winner].SetActive(true);
     }
 
     private void InitRound()
@@ -149,6 +164,17 @@ public class GameManager : MonoBehaviour
                 audioManager.Round3Audio();
 			//	audioManager.Round3VoixAudio();
                 break;
+        }
+    }
+
+    private void LastHPOfTheGame()
+    {
+        for(int i = 0; i < 2; ++i)
+        {
+            if(victory[i] >= 1 && fighters[(i + 1) % 2].getHp() <= 1)
+            {
+                //LastHP
+            }
         }
     }
 
@@ -195,6 +221,8 @@ public class GameManager : MonoBehaviour
                 ++victory[(i + 1) % 2];
                 if (victory[(i + 1) % 2] >= 2)
                 {
+                    winner = (i + 1) % 2;
+                    StartCoroutine("DelayBeforeWinnerText");
                     state = GameState.RoundEnd;
                     StartCoroutine("DelayBeforeGameEnd");
                 }
