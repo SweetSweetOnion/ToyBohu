@@ -2959,6 +2959,8 @@ MonoBehaviour:
   vfx: {fileID: 0}
   fxLight: {fileID: 2660402372749944217}
   attackTrails: []
+  stickMatBase: {fileID: 0}
+  stickMatLight: {fileID: 0}
 --- !u!114 &5794088237742114836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,6 +2976,7 @@ MonoBehaviour:
   hitConfirm: {fileID: 191684663}
   parry: {fileID: 813067555}
   dash: {fileID: 1984360172}
+  trails: []
 --- !u!114 &5794088237742114839
 MonoBehaviour:
   m_ObjectHideFlags: 0
