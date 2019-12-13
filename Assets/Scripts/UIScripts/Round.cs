@@ -5,16 +5,34 @@ using UnityEngine.UI;
 
 public class Round : MonoBehaviour
 {
-    public Sprite[] RoundSprite;
+    [SerializeField] private GameObject[] roundBar;
 
-    public Image RoundUI;
+    [SerializeField] private int indexPlayer;
 
-    public int indexPlayer;
+    private int previousScore = 0;
 
 
     // Update is called once per frame
     void Update()
     {
-        RoundUI.sprite = RoundSprite[GameManager.Instance.GetVictory(indexPlayer)];
+        int score = GameManager.Instance.GetVictory(indexPlayer);
+
+        if(previousScore == score)
+        {
+            return;
+        }
+
+        previousScore = score;
+
+        for(int i = 0; i < 3; i++)
+        {
+            roundBar[i].SetActive(false);
+        }
+
+        if (score <= 2)
+        {
+            roundBar[score].SetActive(true);
+        }
+
     }
 }
