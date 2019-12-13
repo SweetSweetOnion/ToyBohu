@@ -4566,8 +4566,8 @@ MonoBehaviour:
   - {fileID: 1656038821}
   tuto: {fileID: 1292215930}
   menu:
-    m_SceneAsset: {fileID: 0}
-    m_SceneName: 
+    m_SceneAsset: {fileID: 102900000, guid: 1cb924d9e4078c041a0325eec32505d0, type: 3}
+    m_SceneName: Menu
 --- !u!4 &1543081398
 Transform:
   m_ObjectHideFlags: 0
