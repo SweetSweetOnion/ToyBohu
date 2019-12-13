@@ -384,7 +384,7 @@ Material:
     - _EnableSpecularOcclusion: 0
     - _EnergyConservingSpecularColor: 1
     - _FlipbookMode: 0
-    - _Glow: 21.4
+    - _Glow: 70.5
     - _HdrpVersion: 2
     - _HeightAmplitude: 0.02
     - _HeightAmplitude0: 0.02
@@ -442,7 +442,7 @@ Material:
     - _InheritBaseNormal1: 0
     - _InheritBaseNormal2: 0
     - _InheritBaseNormal3: 0
-    - _InvFade: 1
+    - _InvFade: 1.32
     - _InvTilingScale: 1
     - _InvTilingScale0: 1
     - _InvTilingScale1: 1
