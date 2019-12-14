@@ -82,6 +82,11 @@ public class GameManager : MonoBehaviour
             }
         }
         LastHPOfTheGame();
+
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			RestartGame();
+		}
     }
 
     private IEnumerator DelayDuringTuto()

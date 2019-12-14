@@ -10,6 +10,9 @@ EditorBuildSettings:
     guid: 1cb924d9e4078c041a0325eec32505d0
   - enabled: 1
     path: Assets/Scenes/Final/Fight.unity
+    guid: a220a3cf8a10e5549be0bacfbd52e537
+  - enabled: 0
+    path: Assets/Scenes/WIP/SceneNicolas2.unity
     guid: cd9f8a09d16729b4bb667f4af22d04b0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4a270dc82c51ec54aa00008cb82b98a7,

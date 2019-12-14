@@ -3135,7 +3135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2691181716512114880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 0, z: 0.12}
+  m_LocalPosition: {x: 0.045, y: 0, z: -0.668}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4007389800184820243}
@@ -3408,11 +3408,14 @@ MonoBehaviour:
   state: 0
   currentHitbox: {fileID: 0}
   opponent: {fileID: 0}
-  dashCooldown: 0.2
+  dashCooldown: 1
   setUpAttackDuration: 0.4
   blockDuration: 0.1
   attackDuration: 0.2
   attackLagDuration: 0.1
+  flashDuration: 0.5
+  flashDelay: 0.2
+  flashMaterial: {fileID: 2100000, guid: f1213c712fdcb974b9ab7f61d527c828, type: 2}
 --- !u!114 &7680290863925419704
 MonoBehaviour:
   m_ObjectHideFlags: 0
