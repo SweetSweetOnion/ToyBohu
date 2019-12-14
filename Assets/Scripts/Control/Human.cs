@@ -32,8 +32,8 @@ public class Human : Control
 
 		playerInput.currentActionMap["Attack"].performed += Attack;
 		playerInput.currentActionMap["Dash"].performed += Dash;
-		playerInput.currentActionMap["Move"].performed += ctx => lstickBuffer = ctx.ReadValue<Vector2>();
-		playerInput.currentActionMap["Move"].canceled += ctx => lstickBuffer = Vector2.zero;
+		playerInput.currentActionMap["Move"].performed += MovePerformed;
+		playerInput.currentActionMap["Move"].canceled += MoveCanceled;
 	}
 
 	private void OnDisable()

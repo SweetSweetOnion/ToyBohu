@@ -82,11 +82,6 @@ public class GameManager : MonoBehaviour
             }
         }
         LastHPOfTheGame();
-
-		if (Input.GetKeyDown(KeyCode.R))
-		{
-			RestartGame();
-		}
     }
 
     private IEnumerator DelayDuringTuto()
@@ -158,7 +153,8 @@ public class GameManager : MonoBehaviour
         state = GameState.RoundStart;
         for (int i = 0; i < 2; ++i)
         {
-            fighters[i].GetComponent<Physics>().DirectMoveAt(startingPositions[i]);
+			HardResetTrails(fighters[i]);
+			fighters[i].GetComponent<Physics>().DirectMoveAt(startingPositions[i]);
             fighters[i].Initialize();
             fighters[i].SetOpponent(fighters[(i + 1) % 2]);
         }
@@ -274,4 +270,13 @@ public class GameManager : MonoBehaviour
     {
         return state == GameState.GameEnd;
     }
+
+	private void HardResetTrails(Fighter f)
+	{
+		foreach(TrailRenderer t in f.GetComponentsInChildren<TrailRenderer>())
+		{
+			t.Clear();
+			t.emitting = false;
+		}
+	}
 }
