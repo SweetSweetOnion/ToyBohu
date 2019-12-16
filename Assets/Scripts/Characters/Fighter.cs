@@ -63,7 +63,7 @@ public class Fighter : MonoBehaviour
     /**
      * Turn the fighter to look at the opponent
      */
-    private void FaceOpponent()
+    public void FaceOpponent()
     {
         Vector3 dir = opponent.transform.position - transform.position;
 		dir = Vector3.ProjectOnPlane(dir, Vector3.up);

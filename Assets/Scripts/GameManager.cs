@@ -158,6 +158,8 @@ public class GameManager : MonoBehaviour
             fighters[i].Initialize();
             fighters[i].SetOpponent(fighters[(i + 1) % 2]);
         }
+        //Because we asked to face the previous position, it needs to be facing now ;
+        fighters[0].FaceOpponent();
 		
 		StartCoroutine("DelayBeforeFight");
     }
