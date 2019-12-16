@@ -148,6 +148,11 @@ public class Gamefeel : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     private IEnumerator FreezeFrame()
     {
         inFreeze = true;
