@@ -2436,7 +2436,7 @@ MonoBehaviour:
   maxSmoothness: 0.99
   applyRangeAttenuation: 1
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
   showAdditionalSettings: 0
   displayLightIntensity: 4000
@@ -3051,7 +3051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 1
-  shadowResolution: 512
+  shadowResolution: 256
   shadowDimmer: 1
   volumetricShadowDimmer: 1
   shadowFadeDistance: 10000
@@ -3116,7 +3116,7 @@ MonoBehaviour:
   maxSmoothness: 1
   applyRangeAttenuation: 1
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
   showAdditionalSettings: 0
   displayLightIntensity: 73.5
@@ -3674,7 +3674,7 @@ MonoBehaviour:
   maxSmoothness: 0.99
   applyRangeAttenuation: 1
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
   showAdditionalSettings: 0
   displayLightIntensity: 10000
@@ -3714,7 +3714,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3896,7 +3896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Version: 1
-  shadowResolution: 512
+  shadowResolution: 128
   shadowDimmer: 1
   volumetricShadowDimmer: 1
   shadowFadeDistance: 10000
@@ -4770,7 +4770,7 @@ MonoBehaviour:
   beginRoundDelay: 3
   beginRoundIsLit: 1
   endRoundDelay: 4
-  tutoDelay: 5
+  tutoDelay: 15
   delayBeforeBeingAbleToRestart: 7
   audioManager: {fileID: 107005888}
   fighters:
@@ -5890,6 +5890,11 @@ PrefabInstance:
       propertyPath: m_DefaultControlScheme
       value: Gamepad
       objectReference: {fileID: 0}
+    - target: {fileID: 413942857985144403, guid: 1d77df6d9ec713040b59ecff9351c0b4,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player1
+      objectReference: {fileID: 0}
     - target: {fileID: 687723476976145820, guid: 1d77df6d9ec713040b59ecff9351c0b4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6013,6 +6018,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106232041942264085, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106232041942264085, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: f5bbc0755b48d514aa3d9da9b493c688,
+        type: 3}
+    - target: {fileID: 5106232041942264085, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
       objectReference: {fileID: 0}
     - target: {fileID: 5365119323177372679, guid: d19da320cce575a458aa2b5362176a28,
         type: 3}
