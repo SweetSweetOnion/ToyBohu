@@ -6050,6 +6050,21 @@ PrefabInstance:
       propertyPath: opponent
       value: 
       objectReference: {fileID: 3052266021494430826}
+    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: blockDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: attackDuration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
+        type: 3}
+      propertyPath: setUpAttackDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7680290863925419709, guid: d19da320cce575a458aa2b5362176a28,
         type: 3}
       propertyPath: m_LocalPosition.x

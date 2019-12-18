@@ -96,6 +96,8 @@ public class Fighter : MonoBehaviour
             return;
         }
 
+		animator.SetFloat("AttackSpeed",GetAttackSpeedMultiplier());
+
         counterInState += Time.deltaTime;
         switch (state)
         {
@@ -466,5 +468,10 @@ public class Fighter : MonoBehaviour
 		skinMeshRenderer.material = baseMaterial;
 	}
 
+
+	private float GetAttackSpeedMultiplier()
+	{
+		return (setUpAttackDuration + blockDuration + attackDuration + attackLagDuration) / 1.167f;
+	}
 }
 
