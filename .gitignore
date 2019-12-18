@@ -59,3 +59,8 @@ sysinfo.txt
 **/fmod_editor.log
 **/fmod.log
 
+
+/Assets/FMODStudioCache.asset
+/Assets/FMODStudioCache.asset.meta
+fmod.log
+fmod_editor.log
