@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.VFX;
+using UnityEngine.InputSystem;
 
 public class FXManager : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class FXManager : MonoBehaviour
 	{
 		EndDashFx();
 	}
-
 
 	public void HitFX()
 	{
@@ -48,10 +48,10 @@ public class FXManager : MonoBehaviour
 
 	private void SetTrail(bool active)
 	{
-		
-		foreach(TrailRenderer t in trails)
+
+		foreach (TrailRenderer t in trails)
 		{
 			t.emitting = active;
 		}
-	} 
+	}
 }

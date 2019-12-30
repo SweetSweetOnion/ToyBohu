@@ -5874,27 +5874,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 413942857985144403, guid: 1d77df6d9ec713040b59ecff9351c0b4,
-        type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 413942857985144403, guid: 1d77df6d9ec713040b59ecff9351c0b4,
-        type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: 4da0bafbe1acb9e459ef87f322dd8a8d,
-        type: 3}
-    - target: {fileID: 413942857985144403, guid: 1d77df6d9ec713040b59ecff9351c0b4,
-        type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Gamepad
-      objectReference: {fileID: 0}
-    - target: {fileID: 413942857985144403, guid: 1d77df6d9ec713040b59ecff9351c0b4,
-        type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player1
-      objectReference: {fileID: 0}
     - target: {fileID: 687723476976145820, guid: 1d77df6d9ec713040b59ecff9351c0b4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5960,11 +5939,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3024092330322805246, guid: 1d77df6d9ec713040b59ecff9351c0b4,
-        type: 3}
-      propertyPath: controller
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3024092330322805247, guid: 1d77df6d9ec713040b59ecff9351c0b4,
         type: 3}
       propertyPath: opponent
@@ -6014,27 +5988,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5106232041942264085, guid: d19da320cce575a458aa2b5362176a28,
-        type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5106232041942264085, guid: d19da320cce575a458aa2b5362176a28,
-        type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5106232041942264085, guid: d19da320cce575a458aa2b5362176a28,
-        type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: f5bbc0755b48d514aa3d9da9b493c688,
-        type: 3}
-    - target: {fileID: 5106232041942264085, guid: d19da320cce575a458aa2b5362176a28,
-        type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Gamepad
-      objectReference: {fileID: 0}
     - target: {fileID: 5365119323177372679, guid: d19da320cce575a458aa2b5362176a28,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6050,21 +6003,6 @@ PrefabInstance:
       propertyPath: opponent
       value: 
       objectReference: {fileID: 3052266021494430826}
-    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
-        type: 3}
-      propertyPath: blockDuration
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
-        type: 3}
-      propertyPath: attackDuration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7680290863925419705, guid: d19da320cce575a458aa2b5362176a28,
-        type: 3}
-      propertyPath: setUpAttackDuration
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7680290863925419709, guid: d19da320cce575a458aa2b5362176a28,
         type: 3}
       propertyPath: m_LocalPosition.x

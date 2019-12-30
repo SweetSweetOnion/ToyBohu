@@ -6,11 +6,7 @@ public enum FighterState {Idle, SetUpAttack, Block, Parry, Attack, AttackLag, Da
 
 public class Fighter : MonoBehaviour
 {
-    //Stats
-    private float speed = 6f;
-    private int maxHP = 3;
-	
-
+   
     //Values
     private int hp;
 	[SerializeField][DisplayWithoutEdit]
@@ -18,27 +14,32 @@ public class Fighter : MonoBehaviour
     private Vector2 currentDirection;
 	private Physics physics;
     private bool moved = false;
-
+	[HideInInspector]
     public Hitbox currentHitbox;
 	private float lastDash;
+
+	//externalComponents
     private Impact impact;
     private Animator animator;
 	private FXManager fxManager;
 	private Dash dash;
     private PlayerAudioManager playerAudioManager;
 	private SkinnedMeshRenderer skinMeshRenderer;
+	private RumbleManager rumble;
+
+
     private bool attackBuffer;
 	private Material baseMaterial;
 	//Counters
 	private float counterInState;
 
-    //Serialized fields
-    [SerializeField]private Fighter opponent;
-	[SerializeField]private float dashCooldown = 0.2f;
-	[SerializeField]private float setUpAttackDuration = 0.1f;
-	[SerializeField]private float blockDuration = 0.2f;
-	[SerializeField]private float attackDuration = 0.2f;
-	[SerializeField]private float attackLagDuration = 0.2f;
+	//Serialized fields
+	[SerializeField]
+	private Fighter opponent;
+	[SerializeField]
+	private FighterData fData;
+	public FighterData data => fData;
+
 	[SerializeField]
 	private float flashDuration = 1;
 	[SerializeField]
@@ -49,27 +50,7 @@ public class Fighter : MonoBehaviour
 	public Vector2 direction => currentDirection;
 	public float stateCounter => counterInState;
 
-    public void Initialize()
-    {
-        attackBuffer = false;
-        hp = maxHP;
-        state = FighterState.Idle;
-        impact.ResetImpact();
-        animator.SetTrigger("Initialize");
-        animator.SetFloat("Speed", 0f);
-        FaceOpponent();
-    }
-
-    /**
-     * Turn the fighter to look at the opponent
-     */
-    public void FaceOpponent()
-    {
-        Vector3 dir = opponent.transform.position - transform.position;
-		dir = Vector3.ProjectOnPlane(dir, Vector3.up);
-        Quaternion rot = Quaternion.LookRotation(dir, Vector3.up);
-		transform.rotation = rot;
-    }
+   
 
 	private void Awake()
 	{
@@ -82,6 +63,7 @@ public class Fighter : MonoBehaviour
 		dash = GetComponent<Dash>();
         playerAudioManager = GetComponentInChildren<PlayerAudioManager>();
 		skinMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+		rumble = GetComponent<RumbleManager>();
 		baseMaterial = skinMeshRenderer.material;
     }
 
@@ -90,7 +72,29 @@ public class Fighter : MonoBehaviour
         Initialize();
     }
 
-    void Update()
+	public void Initialize()
+	{
+		attackBuffer = false;
+		hp = fData.maxHP;
+		state = FighterState.Idle;
+		impact.ResetImpact();
+		animator.SetTrigger("Initialize");
+		animator.SetFloat("Speed", 0f);
+		FaceOpponent();
+	}
+
+	/**
+     * Turn the fighter to look at the opponent
+     */
+	public void FaceOpponent()
+	{
+		Vector3 dir = opponent.transform.position - transform.position;
+		dir = Vector3.ProjectOnPlane(dir, Vector3.up);
+		Quaternion rot = Quaternion.LookRotation(dir, Vector3.up);
+		transform.rotation = rot;
+	}
+
+	void Update()
     {
         if (!GameManager.Instance.PlayerCanInteract()) {
             return;
@@ -162,6 +166,7 @@ public class Fighter : MonoBehaviour
                     TensionManager.Instance.AddTension(10f);
 					fxManager.DashFx();
                     playerAudioManager.AudioDash();
+					rumble.TriggerLowFreqRumble(0.3f, 0.5f);
                     break;
                 }
             case FighterState.SetUpAttack:
@@ -176,6 +181,8 @@ public class Fighter : MonoBehaviour
             case FighterState.Attack:
                 {
 					currentHitbox.SetAttacking(true);
+					rumble.TriggerHighFreqRumble(0.2f, 0.5f);
+
 					break;
                 }
             case FighterState.AttackLag:
@@ -187,6 +194,7 @@ public class Fighter : MonoBehaviour
             case FighterState.Death:
                 {
 					playerAudioManager.AudioVoixMort();
+					rumble.TriggerLowFreqRumble(1f, 2.5f);
 					// Destroy(gameObject);
 					break;
                 }
@@ -220,7 +228,7 @@ public class Fighter : MonoBehaviour
     private void SetUpAttack()
     {
         FaceOpponent();
-        if(counterInState > setUpAttackDuration)
+        if(counterInState > data.attack.setUpDuration)
         {
             ChangeState(FighterState.Block);
         }
@@ -228,7 +236,7 @@ public class Fighter : MonoBehaviour
 
     private void Block()
     {
-        if(counterInState > blockDuration)
+        if(counterInState > data.attack.blockDuration)
         {
             ChangeState(FighterState.Attack);
         }
@@ -236,7 +244,7 @@ public class Fighter : MonoBehaviour
 
     private void Attack()
     {
-        if(counterInState > attackDuration)
+        if(counterInState > data.attack.attackDuration)
         {
             ChangeState(FighterState.AttackLag);
         }
@@ -244,7 +252,7 @@ public class Fighter : MonoBehaviour
     
     private void AttackLag()
     {
-        if(counterInState > attackLagDuration)
+        if(counterInState > data.attack.lagDuration)
         {
             ChangeState(FighterState.Idle);
         }
@@ -284,7 +292,7 @@ public class Fighter : MonoBehaviour
         {
             dir.Normalize();
         }
-        Vector2 movement = dir * speed;
+		Vector2 movement = dir;
         Movement(movement);
         animator.SetFloat("Speed",movement.magnitude);
 		if (!moved)
@@ -305,7 +313,7 @@ public class Fighter : MonoBehaviour
         {
             return false;
         }
-        if (state == FighterState.Idle && Time.time > lastDash + dashCooldown && animator.GetFloat("Speed") > 0.0f)
+        if (state == FighterState.Idle && Time.time > lastDash + data.dash.coolDown && animator.GetFloat("Speed") > 0.0f)
         {
             ChangeState(FighterState.Dash);
             return true;
@@ -373,7 +381,9 @@ public class Fighter : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         ImpulseOppositToOpponent(15f);
-        Gamefeel.Instance.InitFreezeFrame(0.1f, 0.002f);
+		rumble.TriggerHighFreqRumble(1f, 1.5f);
+		rumble.TriggerLowFreqRumble(1f, 2f);
+		Gamefeel.Instance.InitFreezeFrame(0.1f, 0.002f);
         Gamefeel.Instance.InitScreenshake(0.2f, 0.4f);
 		StartCoroutine(Flash());
     }
@@ -397,9 +407,11 @@ public class Fighter : MonoBehaviour
         playerAudioManager.AudioBlockArmes();
 		playerAudioManager.AudioVoixDefense();
         Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
-    }
+		rumble.TriggerLowFreqRumble(0.7f, 1f);
+		rumble.TriggerHighFreqRumble(1f, 0.7f);
+	}
 
-    public void HitboxCollide()
+	public void HitboxCollide()
     {
         ParryFeedback();
         currentHitbox.SetAttacking(false);
@@ -471,7 +483,12 @@ public class Fighter : MonoBehaviour
 
 	private float GetAttackSpeedMultiplier()
 	{
-		return (setUpAttackDuration + blockDuration + attackDuration + attackLagDuration) / 1.167f;
+		return (fData.attack.setUpDuration + fData.attack.blockDuration + fData.attack.attackDuration + fData.attack.lagDuration) / 1.167f;
+	}
+
+	public float GetDistanceToOpponent()
+	{
+		return (transform.position - opponent.transform.position).sqrMagnitude;
 	}
 }
 

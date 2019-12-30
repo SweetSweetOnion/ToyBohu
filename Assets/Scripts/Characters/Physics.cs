@@ -1,24 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController),typeof(Fighter))]
 public class Physics : MonoBehaviour
 {
 	//inspector values
-	/*[SerializeField]
-	private float maxSpeed = 1;
-	[SerializeField]
-	private float acceleration = 1;
-	[SerializeField]
-	private float deceleration = 1;*/
-	[SerializeField]
-	private float rotationLerp = 10f;
-	[SerializeField]
-	private float normalSpeed = 1;
-	[SerializeField]
-	private float dashSpeed = 2;
-	[SerializeField]
-	private float dashTime = 0.2f;
 	[Header("Wind Effect")]
 	[SerializeField]
 	private float windStrength = 10;
@@ -45,18 +31,19 @@ public class Physics : MonoBehaviour
 
 	//external component
 	private CharacterController controller;
-
+	private FighterData fData;
 	private void Awake()
 	{
 		controller = GetComponent<CharacterController>();
 		animator = GetComponentInChildren<Animator>().transform;
+		fData = GetComponent<Fighter>().data;
 	}
 
 	public void AddForce(Vector3 dir)
 	{
 		if (dir.magnitude < 0.01f) return;//to do check deadzone
 
-		currentDirection = Vector3.Lerp(currentDirection, dir, rotationLerp * Time.deltaTime);
+		currentDirection = Vector3.Lerp(currentDirection, dir, fData.move.rotationLerp * Time.deltaTime);
 
 		isForce = true;
 	}
@@ -77,12 +64,12 @@ public class Physics : MonoBehaviour
 	{
 		if (isForce)
 		{
-			if(forceTime <= dashTime)
+			if(forceTime <= fData.move.microDashDuration)
 			{
-				currentSpeed = dashSpeed;
+				currentSpeed = fData.move.microDashSpeed;
 			}else
 			{
-				currentSpeed = normalSpeed;
+				currentSpeed = fData.move.speed;
 			}
 			forceTime += Time.deltaTime;	
 		}else

@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
         }
         //Because we asked to face the previous position, it needs to be facing now ;
         fighters[0].FaceOpponent();
-		
+		RumbleManager.TriggerRumble(1, 1, 5, this);
 		StartCoroutine("DelayBeforeFight");
     }
 
