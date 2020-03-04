@@ -194,7 +194,7 @@ public class Fighter : MonoBehaviour
             case FighterState.Death:
                 {
 					playerAudioManager.AudioVoixMort();
-					rumble.TriggerLowFreqRumble(1f, 2.5f);
+					rumble.TriggerLowFreqRumble(0.8f, 1.5f);
 					// Destroy(gameObject);
 					break;
                 }
@@ -305,10 +305,10 @@ public class Fighter : MonoBehaviour
 
     public bool DashButton()
     {
-        if (GameManager.Instance.IsGameEnd())
+        /*if (GameManager.Instance.IsGameEnd())
         {
             GameManager.Instance.RestartGame();
-        }
+        }*/
         if (!GameManager.Instance.PlayerCanInteract())
         {
             return false;
@@ -323,10 +323,10 @@ public class Fighter : MonoBehaviour
 
     public bool AttackButton()
     {
-        if (GameManager.Instance.IsGameEnd())
+       /* if (GameManager.Instance.IsGameEnd())
         {
             GameManager.Instance.GoToMenu();
-        }
+        }*/
         if (!GameManager.Instance.PlayerCanInteract())
         {
             return false;
@@ -381,8 +381,8 @@ public class Fighter : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         ImpulseOppositToOpponent(15f);
-		rumble.TriggerHighFreqRumble(1f, 1.5f);
-		rumble.TriggerLowFreqRumble(1f, 2f);
+		rumble.TriggerHighFreqRumble(0.8f, 0.75f);
+		rumble.TriggerLowFreqRumble(0.7f, 1f);
 		Gamefeel.Instance.InitFreezeFrame(0.1f, 0.002f);
         Gamefeel.Instance.InitScreenshake(0.2f, 0.4f);
 		StartCoroutine(Flash());
@@ -408,7 +408,7 @@ public class Fighter : MonoBehaviour
 		playerAudioManager.AudioVoixDefense();
         Gamefeel.Instance.InitScreenshake(0.1f, 0.3f);
 		rumble.TriggerLowFreqRumble(0.7f, 1f);
-		rumble.TriggerHighFreqRumble(1f, 0.7f);
+		rumble.TriggerHighFreqRumble(0.5f, 0.7f);
 	}
 
 	public void HitboxCollide()

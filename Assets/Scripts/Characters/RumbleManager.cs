@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 [RequireComponent(typeof(PlayerInput))]
 public class RumbleManager : MonoBehaviour
@@ -22,6 +23,7 @@ public class RumbleManager : MonoBehaviour
 
 	private void Update()
 	{
+		if(ipt.playerIndex < Gamepad.all.Count)
 		Gamepad.all[ipt.playerIndex].SetMotorSpeeds(lowBase + lowFreq, highBase + highFreq);
 	}
 
@@ -36,7 +38,7 @@ public class RumbleManager : MonoBehaviour
 		highFreq = maxValue;
 		while (t < 1)
 		{
-			t += Time.deltaTime / duration;
+			t += Time.unscaledDeltaTime / duration;
 			highFreq = (1 - t) * (1 - t) * maxValue;
 			yield return null;
 		}
@@ -48,7 +50,7 @@ public class RumbleManager : MonoBehaviour
 		lowFreq = maxValue;
 		while (t < 1)
 		{
-			t += Time.deltaTime / duration;
+			t += Time.unscaledDeltaTime / duration;
 			lowFreq = (1 - t) * (1 - t) * maxValue;
 			yield return null;
 		}
@@ -85,7 +87,7 @@ public class RumbleManager : MonoBehaviour
 		float t = 0;
 		while (t < 1)
 		{
-			t += Time.deltaTime / duration;
+			t += Time.unscaledDeltaTime / duration;
 			foreach(Gamepad g in Gamepad.all)
 			{
 				g.SetMotorSpeeds((1 - t) * (1 - t) * low, (1 - t) * (1 - t) * high);

@@ -1,5 +1,5 @@
 {
-    "name": "Controls",
+    "name": "ControlsP2",
     "maps": [
         {
             "name": "Player2",
@@ -25,6 +25,14 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "9294338e-cc2c-46f7-ac1c-6fb265c23f6c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "6567069f-40e0-4c9e-a36b-e5ebe5215327",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -151,6 +159,28 @@
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8a88894-a104-473b-83fb-1d7b72e20d8c",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "061a3024-12fc-40b6-83fd-4f230b7908e8",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -178,6 +208,14 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "eb99ebe1-693e-4dc9-a9b8-fd31b388ed9c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "3996b231-bb21-47b4-9b95-417e79dffc8a",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -302,6 +340,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bbcfdc4c-3928-48e1-8c2a-a5fb0db1e6c0",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f58b1cb-9d62-40b2-be7d-77a452ffa716",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

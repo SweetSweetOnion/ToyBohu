@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
         }
         //Because we asked to face the previous position, it needs to be facing now ;
         fighters[0].FaceOpponent();
-		RumbleManager.TriggerRumble(1, 1, 5, this);
+		RumbleManager.TriggerRumble(0.7f, 0.8f, 2, this);
 		StartCoroutine("DelayBeforeFight");
     }
 
@@ -215,14 +215,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Restart()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 
     private IEnumerator Menu()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         SceneManager.LoadScene(menu.SceneName);
     }
 
